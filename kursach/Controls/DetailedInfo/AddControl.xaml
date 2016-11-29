@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="kursach.Controls.DetailedInfo.AddControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ext="clr-namespace:kursach"
+             xmlns:classes="clr-namespace:kursach.Classes"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="500">
+
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Lucida Sans"/>
+            <Setter Property="Margin" Value="0 0 10 0"></Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel Margin="10" Name="TopPanel">
+            <DockPanel Name="NamePanel" Margin="10 50 10 10">
+                <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Name</TextBlock>
+                <TextBox Name="NameBox" MinWidth="240" MaxLines="1" HorizontalAlignment="Right" DockPanel.Dock="Right" MaxLength="32"></TextBox>
+            </DockPanel>
+            <DockPanel Name="SurnamePanel" Margin="10">
+                <TextBlock VerticalAlignment="Center"  DockPanel.Dock="Left">Surname</TextBlock>
+                <TextBox Name="SurnameBox" MinWidth="240" MaxLines="1" HorizontalAlignment="Right" DockPanel.Dock="Right" MaxLength="32"></TextBox>
+            </DockPanel>
+            <DockPanel Name="BankPanel" Margin="10">
+                <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Bank account</TextBlock>
+                <TextBox Name="BankBox" MinWidth="240" MaxLines="1" HorizontalAlignment="Right" DockPanel.Dock="Right" MaxLength="8"></TextBox>
+            </DockPanel>
+            <DockPanel Name="DepartmentPanel" Margin="10">
+                <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Department</TextBlock>
+                <ComboBox Name="DepartmentBox" MinWidth="240" HorizontalAlignment="Right" DockPanel.Dock="Right"></ComboBox>
+            </DockPanel>
+        </StackPanel>
+        <StackPanel Margin="10" Name="BottomPanel">
+            <DockPanel Margin="10 50 10 10" LastChildFill="False">
+                <Button Style="{StaticResource RoundCorner}" classes:StyleExt.Color="{StaticResource BlueButtonColor}" DockPanel.Dock="Left" MinWidth="100" Click="Button_Click_2">
+                    <TextBlock>Save</TextBlock>
+                </Button>
+                <Button Style="{StaticResource RoundCorner}" classes:StyleExt.Color="{StaticResource RedButtonColor}" DockPanel.Dock="Right" MinWidth="100" MinHeight="50" Click="Button_Click_1">
+                    <TextBlock>Cancel</TextBlock>
+                </Button>
+            </DockPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

@@ -6,25 +6,25 @@ using System.Windows.Input;
 namespace kursach.Controls
 {
     /// <summary>
-    /// Interaction logic for Menu.xaml
+    ///     Interaction logic for Menu.xaml
     /// </summary>
     public partial class Menu : UserControl, ISwitchable
     {
         private Window upWin;
+
         public Menu()
         {
             InitializeComponent();
         }
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-            upWin?.Close();
-        }
-        
-
         public void UtilizeState(object state)
         {
             throw new NotImplementedException();
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            upWin?.Close();
         }
 
         private void WorkersButton_Click(object sender, RoutedEventArgs e)
@@ -43,7 +43,6 @@ namespace kursach.Controls
         {
             upWin = Window.GetWindow(this);
             upWin.Cursor = Cursors.Arrow;
-
         }
     }
 }

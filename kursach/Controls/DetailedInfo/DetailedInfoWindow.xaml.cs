@@ -1,30 +1,34 @@
 ﻿using System.Windows;
-using kursach.Classes;
 
 namespace kursach.Controls.DetailedInfo
 {
     /// <summary>
-    /// Interaction logic for DetailedInfoWindow.xaml
+    ///     Interaction logic for DetailedInfoWindow.xaml
     /// </summary>
     public partial class DetailedInfoWindow : Window
     {
-        public enum Desire { Add, Info}
-        public DetailedInfoWindow()
+        public enum Desire
         {
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            InitializeComponent();
+            Add,
+            Info
         }
 
         private CompanyEntity _info;
+
+        public DetailedInfoWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            InitializeComponent();
+        }
 
         public void Init(Desire d)
         {
             switch (d)
             {
-                    case Desire.Add:
+                case Desire.Add:
                     Content = new AddControl();
                     break;
-                    case Desire.Info:
+                case Desire.Info:
                     Content = new InfoControl();
                     break;
             }

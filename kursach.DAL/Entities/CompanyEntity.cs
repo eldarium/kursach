@@ -1,4 +1,4 @@
-﻿namespace kursach.Classes
+﻿namespace kursach.DAL.Entities
 {
     public abstract class CompanyEntity
     {

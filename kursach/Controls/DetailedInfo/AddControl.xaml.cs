@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using kursach.Classes;
-using kursach.DAL.DataWorkers;
 
 namespace kursach.Controls.DetailedInfo
 {
     /// <summary>
-    /// Interaction logic for AddControl.xaml
+    ///     Interaction logic for AddControl.xaml
     /// </summary>
     public partial class AddControl : UserControl
     {
@@ -23,7 +21,8 @@ namespace kursach.Controls.DetailedInfo
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            MainWorker.AddWorker(new Worker(NameBox.Text, SurnameBox.Text,Convert.ToInt64(BankBox.Text), new Department("asdsad"),  new Staff("jtyjt")));
+            MainWorker.AddWorker(new Worker(NameBox.Text, SurnameBox.Text, Convert.ToInt64(BankBox.Text),
+                new Department("asdsad"), new Staff("jtyjt")));
         }
     }
 }

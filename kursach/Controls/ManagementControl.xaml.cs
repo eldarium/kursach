@@ -1,41 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using kursach.Classes;
 using kursach.Controls.DetailedInfo;
-using kursach.DAL.DataWorkers;
 
 namespace kursach.Controls
 {
     /// <summary>
-    /// Interaction logic for ManagementControl.xaml
+    ///     Interaction logic for ManagementControl.xaml
     /// </summary>
     public partial class ManagementControl : UserControl
     {
-        private Window upWin;
-        private readonly DbContext _context;
-        private readonly DetailedInfoWindow _helper;
         public enum ManagementType
         {
             Workers,
             Departments
         };
 
+        private readonly DbContext _context;
+        private readonly DetailedInfoWindow _helper;
         private readonly ManagementType _type;
-
+        private Window upWin;
 
         public ManagementControl(ManagementType type)
         {
@@ -43,18 +27,18 @@ namespace kursach.Controls
             _type = type;
             switch (type)
             {
-                 case ManagementType.Workers:
+                case ManagementType.Workers:
                     _context = new WorkerContext();
                     _context.Set<Worker>().LoadAsync();
                     break;
-                 case ManagementType.Departments:
-                    _context=new DepartmentContext();
+                case ManagementType.Departments:
+                    _context = new DepartmentContext();
                     _context.Set<Department>().LoadAsync();
                     break;
             }
             InitializeComponent();
         }
-        
+
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             Switcher.SwitchBack();
@@ -100,7 +84,7 @@ namespace kursach.Controls
 
         private void InfoGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            _helper.AddInfo((CompanyEntity)InfoGrid.SelectedItem);
+            _helper.AddInfo((CompanyEntity) InfoGrid.SelectedItem);
             _helper.Init(DetailedInfoWindow.Desire.Info);
         }
 
@@ -109,10 +93,10 @@ namespace kursach.Controls
             switch (_type)
             {
                 case ManagementType.Workers:
-                    MainWorker.RemoveWorker((Worker)InfoGrid.SelectedItem);
+                    MainWorker.RemoveWorker((Worker) InfoGrid.SelectedItem);
                     break;
                 case ManagementType.Departments:
-                    _context.Set<Department>().Remove((Department)InfoGrid.SelectedItem);
+                    _context.Set<Department>().Remove((Department) InfoGrid.SelectedItem);
                     break;
             }
         }

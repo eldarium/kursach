@@ -37,14 +37,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -66,11 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\CompanyEntity.cs" />
-    <Compile Include="Classes\Department.cs" />
-    <Compile Include="Classes\Staff.cs" />
-    <Compile Include="Classes\StyleExt.cs" />
-    <Compile Include="Classes\Worker.cs" />
+    <Compile Include="StyleExt.cs" />
     <Compile Include="Controls\DetailedInfo\AddControl.xaml.cs">
       <DependentUpon>AddControl.xaml</DependentUpon>
     </Compile>
@@ -86,10 +74,6 @@
     <Compile Include="Controls\DetailedInfo\DetailedInfoWindow.xaml.cs">
       <DependentUpon>DetailedInfoWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataWorkers\DepartmentContext.cs" />
-    <Compile Include="DataWorkers\MainWorker.cs" />
-    <Compile Include="DataWorkers\StaffContext.cs" />
-    <Compile Include="DataWorkers\WorkerContext.cs" />
     <Compile Include="Switcher.cs" />
     <Page Include="Controls\DetailedInfo\AddControl.xaml">
       <SubType>Designer</SubType>
@@ -166,6 +150,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\hard-hat-icon-21023.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\kursach.BLL\kursach.BLL.csproj">
+      <Project>{eef7b3ee-2c41-486e-b31c-93ff0fe6ad61}</Project>
+      <Name>kursach.BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

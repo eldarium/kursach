@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Controls;
 
 namespace kursach
 {
-    class Switcher
+    internal class Switcher
     {
-        private static readonly Stack<UserControl> History; 
-        public static MainWindow PageSwitcher { private get; set; }
+        private static readonly Stack<UserControl> History;
 
         static Switcher()
         {
             History = new Stack<UserControl>();
         }
+
+        public static MainWindow PageSwitcher { private get; set; }
 
         public static void SwitchBack()
         {

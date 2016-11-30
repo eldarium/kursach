@@ -1,9 +1,6 @@
-﻿using System.Data.Entity;
-using kursach.Classes;
-
-namespace kursach.DataWorkers
+﻿namespace kursach.DAL.DataWorkers
 {
-    class DepartmentContext : DbContext
+    public class DepartmentContext : DbContext
     {
         public DepartmentContext() : base("DepartmentsDBConnection") { }
 

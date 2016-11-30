@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using kursach.Classes;
-using kursach.DataWorkers;
+using kursach.DAL.DataWorkers;
 
 namespace kursach.Controls.DetailedInfo
 {

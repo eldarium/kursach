@@ -16,7 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using kursach.Classes;
 using kursach.Controls.DetailedInfo;
-using kursach.DataWorkers;
+using kursach.DAL.DataWorkers;
 
 namespace kursach.Controls
 {

@@ -1,7 +1,4 @@
-﻿using System.Data.Entity;
-using kursach.Classes;
-
-namespace kursach.DataWorkers
+﻿namespace kursach.DAL.DataWorkers
 {
     class StaffContext :DbContext
     {

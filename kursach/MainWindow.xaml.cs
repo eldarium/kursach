@@ -14,7 +14,6 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using kursach.DataWorkers;
 using Menu = kursach.Controls.Menu;
 
 namespace kursach

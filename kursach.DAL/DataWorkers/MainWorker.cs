@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using kursach.Classes;
-
-namespace kursach.DataWorkers
+﻿namespace kursach.DAL.DataWorkers
 {
     public static class MainWorker
     {
@@ -27,7 +19,7 @@ namespace kursach.DataWorkers
                 var tableNames = context.Database.SqlQuery<string>("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME NOT LIKE '%Migration%'").ToList();
                 foreach (var tableName in tableNames)
                 {
-                    context.Database.ExecuteSqlCommand(string.Format("DELETE FROM {0}", tableName));
+                    context.Database.ExecuteSqlCommand(string.Format((string) "DELETE FROM {0}", (object) tableName));
                 }
 
                 context.SaveChanges();

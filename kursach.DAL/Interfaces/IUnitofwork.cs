@@ -8,7 +8,7 @@ namespace kursach.DAL.Interfaces
         IRepository<Worker> Workers { get; }
         IRepository<Department> Departments { get; }
         IRepository<Staff> Staffs { get; }
-
+        IRepository<Project> Projects { get; } 
         void Save();
     }
 }

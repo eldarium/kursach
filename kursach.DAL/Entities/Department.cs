@@ -5,10 +5,10 @@ namespace kursach.DAL.Entities
     public class Department : CompanyEntity
     {
         private ISet<Worker> AssignedWorkers;
-        public int DepartmentId { get; private set; }
-        public string Name { get; private set; }
+        public int DepartmentId { get;  set; }
+        public string Name { get;  set; }
 
-        private Department()
+        public Department()
         {
         }
 

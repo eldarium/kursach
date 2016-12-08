@@ -13,6 +13,9 @@ namespace kursach.BLL.DTO
         public string Name { get; private set; }
         public string Surname { get; private set; }
         public long BankAccount { get; private set; }
+        public IEnumerable<string> Projects { get; private set; }
+        public DepartmentDTO AssignedDepartment { get; private set; }
+        public StaffDTO AssignedPosition { get; private set; }
         public double Age => (DateTime.Today - _assignDay).TotalDays; //?
     }
 }

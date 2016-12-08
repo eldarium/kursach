@@ -45,9 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\DepartmentDTO.cs" />
+    <Compile Include="DTO\ProjectDTO.cs" />
     <Compile Include="DTO\StaffDTO.cs" />
     <Compile Include="DTO\WorkerDTO.cs" />
+    <Compile Include="Interfaces\IDepartmentService.cs" />
+    <Compile Include="Interfaces\IProjectService.cs" />
+    <Compile Include="Interfaces\IStaffService.cs" />
+    <Compile Include="Interfaces\IWorkerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\WorkerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\kursach.DAL\kursach.DAL.csproj">
@@ -55,9 +61,7 @@
       <Name>kursach.DAL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

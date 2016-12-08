@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace kursach.BLL.DTO
 {
-    class DepartmentDTO
+    public class DepartmentDTO
     {
         public int DepartmentId { get; private set; }
         public string Name { get; private set; }

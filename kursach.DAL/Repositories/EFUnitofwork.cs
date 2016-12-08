@@ -11,24 +11,27 @@ namespace kursach.DAL.Repositories
 {
     class EFUnitofwork : IUnitofwork
     {
-        private CompanyContext db;
+        private readonly CompanyContext _db;
         private WorkerRepository workerRepository;
         private StaffRepository staffRepository;
         private DepartmentRepository departmentRepository;
+        private ProjectRepository projectRepository;
         public EFUnitofwork()
         {
-            db = new CompanyContext();
+            _db = new CompanyContext();
         }
 
-        public IRepository<Worker> Workers => workerRepository ?? new WorkerRepository(db);
+        public IRepository<Worker> Workers => workerRepository ?? (workerRepository = new WorkerRepository(_db));
 
-        public IRepository<Department> Departments => departmentRepository ?? new DepartmentRepository(db);
+        public IRepository<Department> Departments => departmentRepository ?? (departmentRepository=new DepartmentRepository(_db));
 
-        public IRepository<Staff> Staffs => staffRepository ?? new StaffRepository(db);
+        public IRepository<Staff> Staffs => staffRepository ??(staffRepository = new StaffRepository(_db));
+
+        public IRepository<Project> Projects => projectRepository ??(projectRepository= new ProjectRepository(_db)); 
 
         public void Save()
         {
-            db.SaveChanges();
+            _db.SaveChanges();
         }
 
         private bool disposed;
@@ -37,7 +40,7 @@ namespace kursach.DAL.Repositories
         {
             if (disposed) return;
             if(disposing)
-                db.Dispose();
+                _db.Dispose();
             disposed = true;
         }
         public void Dispose()

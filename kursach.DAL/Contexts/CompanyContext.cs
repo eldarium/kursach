@@ -14,5 +14,6 @@ namespace kursach.DAL.Contexts
         public DbSet<Department> Departments { get; set; }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Worker> Workers { get; set; }
+        public DbSet<Project> Projects { get; set; }
     }
 }

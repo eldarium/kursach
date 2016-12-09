@@ -18,27 +18,25 @@ namespace kursach.BLL.Services
         }
         public void AddWorker(WorkerDTO workerDto)
         {
-            Worker w = new Worker
-            {
-                Name = workerDto.Name,
-                Surname = workerDto.Surname,
-                AssignedDepartment =new Department {DepartmentId = workerDto.AssignedDepartment.DepartmentId, Name = workerDto.AssignedDepartment.Name},
-                AssignedPosition = new Staff { Name=workerDto.AssignedPosition.Name, StaffId =workerDto.AssignedPosition.StaffId},
-                BankAccount = workerDto.BankAccount,
-                Projects = workerDto.Projects,
-                WorkerId = workerDto.WorkerId
-            };
-            throw new System.NotImplementedException();
+            Mapper.Initialize(cfg => cfg.CreateMap<WorkerDTO, Worker>());
+            Worker w = Mapper.Map<WorkerDTO, Worker>(workerDto);
+            Database.Workers.Create(w);
         }
 
         public void RemoveWorker(int? id)
         {
-            throw new System.NotImplementedException();
+            if (id != null) Database.Workers.Delete(id.Value);
+            
         }
 
-        public void ChangeWorker(int? id)
+        public void ChangeWorker(int? id, WorkerDTO newWorker)
         {
-            throw new System.NotImplementedException();
+            if (id == null) return;
+            var toc = Database.Workers.Get(id.Value);
+            if (toc == null) return;
+            Mapper.Initialize(cfg => cfg.CreateMap<WorkerDTO, Worker>());
+            toc = Mapper.Map<WorkerDTO, Worker>(newWorker);
+            Database.Save();
         }
 
         public WorkerDTO GetWorker(int? id)

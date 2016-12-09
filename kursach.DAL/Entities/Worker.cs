@@ -15,18 +15,8 @@ namespace kursach.DAL.Entities
         public Staff AssignedPosition { get;  set; }
         public double Age => (DateTime.Today - _assignDay).TotalDays; //?
 
-        private Worker()
+        public Worker()
         {
-        }
-
-        public Worker(string Name, string Surname, long acc, Department d, Staff pos)
-        {
-            this.Name = Name;
-            this.Surname = Surname;
-            BankAccount = acc;
-            AssignedDepartment = d;
-            AssignedPosition = pos;
-            _assignDay = DateTime.Today;
         }
 
     }

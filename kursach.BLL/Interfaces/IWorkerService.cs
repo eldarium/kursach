@@ -7,7 +7,7 @@ namespace kursach.BLL.Interfaces
     {
         void AddWorker(WorkerDTO workerDto);
         void RemoveWorker(int? id);
-        void ChangeWorker(int? id);
+        void ChangeWorker(int? id, WorkerDTO newWorker);
         WorkerDTO GetWorker(int? id);
         IEnumerable<WorkerDTO> GetWorkers();
         IEnumerable<ProjectDTO> GetProjects(int? workerId); 

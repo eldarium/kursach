@@ -21,8 +21,6 @@ namespace kursach.Controls.DetailedInfo
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            MainWorker.AddWorker(new Worker(NameBox.Text, SurnameBox.Text, Convert.ToInt64(BankBox.Text),
-                new Department("asdsad"), new Staff("jtyjt")));
         }
     }
 }

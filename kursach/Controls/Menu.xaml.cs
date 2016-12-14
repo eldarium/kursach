@@ -29,14 +29,10 @@ namespace kursach.Controls
 
         private void WorkersButton_Click(object sender, RoutedEventArgs e)
         {
-            upWin.Cursor = Cursors.Wait;
-            Switcher.Switch(new ManagementControl(ManagementControl.ManagementType.Workers));
         }
 
         private void DepartmentsButton_Click(object sender, RoutedEventArgs e)
         {
-            upWin.Cursor = Cursors.Wait;
-            Switcher.Switch(new ManagementControl(ManagementControl.ManagementType.Departments));
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

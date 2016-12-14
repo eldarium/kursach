@@ -10,7 +10,7 @@ namespace kursach.BLL.Services
 {
     public class WorkerService : IWorkerService
     {
-        IUnitofwork Database { get; set; }
+        IUnitofwork Database { get; }
 
         public WorkerService(IUnitofwork db)
         {
@@ -21,12 +21,14 @@ namespace kursach.BLL.Services
             Mapper.Initialize(cfg => cfg.CreateMap<WorkerDTO, Worker>());
             Worker w = Mapper.Map<WorkerDTO, Worker>(workerDto);
             Database.Workers.Create(w);
+            Database.Save();
         }
 
         public void RemoveWorker(int? id)
         {
             if (id != null) Database.Workers.Delete(id.Value);
-            
+            Database.Save();
+
         }
 
         public void ChangeWorker(int? id, WorkerDTO newWorker)
@@ -45,16 +47,16 @@ namespace kursach.BLL.Services
             return id != null ? Mapper.Map<Worker, WorkerDTO>(Database.Workers.Get(id.Value)) : null;
         }
 
-        public IEnumerable<WorkerDTO> GetWorkers()
+        public IEnumerable<WorkerDTO> GetAllWorkers()
         {
             Mapper.Initialize(cfg=>cfg.CreateMap<Worker, WorkerDTO>());
-            return Mapper.Map<IEnumerable<Worker>, List<WorkerDTO>>(Database.Workers.GetAll());
+            return Mapper.Map<IEnumerable<Worker>, IEnumerable<WorkerDTO>>(Database.Workers.GetAll());
         }
 
         public IEnumerable<ProjectDTO> GetProjects(int? workerId)
         {
             Mapper.Initialize(cfg=>cfg.CreateMap<Project,ProjectDTO>());
-            return workerId != null ? Mapper.Map<IEnumerable<Project>, List<ProjectDTO>>(Database.Workers.Get(workerId.Value).Projects) : null;
+            return workerId != null ? Mapper.Map<IEnumerable<Project>, IEnumerable<ProjectDTO>>(Database.Workers.Get(workerId.Value).Projects) : null;
         }
 
         public void Dispose()

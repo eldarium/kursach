@@ -9,16 +9,16 @@ using kursach.DAL.Interfaces;
 
 namespace kursach.DAL.Repositories
 {
-    class EFUnitofwork : IUnitofwork
+    public class EFUnitofwork : IUnitofwork
     {
         private readonly CompanyContext _db;
         private WorkerRepository workerRepository;
         private StaffRepository staffRepository;
         private DepartmentRepository departmentRepository;
         private ProjectRepository projectRepository;
-        public EFUnitofwork()
+        public EFUnitofwork(string connectionString)
         {
-            _db = new CompanyContext();
+            _db = new CompanyContext(connectionString);
         }
 
         public IRepository<Worker> Workers => workerRepository ?? (workerRepository = new WorkerRepository(_db));

@@ -9,7 +9,7 @@ namespace kursach.BLL.Interfaces
         void RemoveWorker(int? id);
         void ChangeWorker(int? id, WorkerDTO newWorker);
         WorkerDTO GetWorker(int? id);
-        IEnumerable<WorkerDTO> GetWorkers();
+        IEnumerable<WorkerDTO> GetAllWorkers();
         IEnumerable<ProjectDTO> GetProjects(int? workerId); 
         void Dispose();
     }

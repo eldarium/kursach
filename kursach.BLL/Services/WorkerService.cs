@@ -14,13 +14,21 @@ namespace kursach.BLL.Services
 
         public WorkerService(IUnitofwork db)
         {
+            Mapper.Initialize(cfg => {
+                cfg.CreateMap<Worker, WorkerDTO>();
+                cfg.CreateMap<Department, DepartmentDTO>();
+                cfg.CreateMap<Staff, StaffDTO>();
+                cfg.CreateMap<Project, ProjectDTO>();
+                cfg.CreateMap<Worker, WorkerDTO>().ReverseMap();
+                cfg.CreateMap<Department, DepartmentDTO>().ReverseMap();
+                cfg.CreateMap<Staff, StaffDTO>().ReverseMap();
+                cfg.CreateMap<Project, ProjectDTO>().ReverseMap();
+            });
             Database = db;
         }
         public void AddWorker(WorkerDTO workerDto)
         {
-            //Mapper.Initialize(cfg => cfg.CreateMap<DepartmentDTO, Department>());
-            //Mapper.Initialize(cfg => cfg.CreateMap<WorkerDTO, Worker>());
-            Worker w = new Worker() {BankAccount =  workerDto.BankAccount, AssignedDepartment = new Department() { DepartmentId = workerDto.AssignedDepartment.DepartmentId, Name = workerDto.AssignedDepartment.Name}, AssignedPosition = new Staff() {Name = workerDto.AssignedPosition.Name, StaffId = workerDto.AssignedPosition.StaffId},Name = workerDto.Name, Surname = workerDto.Surname};
+            Worker w = Mapper.Map<WorkerDTO, Worker>(workerDto);
             Database.Workers.Create(w);
             Database.Save();
         }
@@ -37,27 +45,22 @@ namespace kursach.BLL.Services
             if (id == null) return;
             var toc = Database.Workers.Get(id.Value);
             if (toc == null) return;
-            Mapper.Initialize(cfg => cfg.CreateMap<WorkerDTO, Worker>());
             toc = Mapper.Map(newWorker,toc);
             Database.Save();
         }
 
         public WorkerDTO GetWorker(int? id)
         {
-            Mapper.Initialize(cfg => cfg.CreateMap<Worker, WorkerDTO>());
             return id != null ? Mapper.Map<Worker, WorkerDTO>(Database.Workers.Get(id.Value)) : null;
         }
 
         public IEnumerable<WorkerDTO> GetAllWorkers()
         {
-            Mapper.Initialize(cfg=>cfg.CreateMap<Worker, WorkerDTO>());
-            Mapper.Initialize(cfg => cfg.CreateMap<Department, DepartmentDTO>());
             return Mapper.Map<IEnumerable<Worker>, IEnumerable<WorkerDTO>>(Database.Workers.GetAll());
         }
 
         public IEnumerable<ProjectDTO> GetProjects(int? workerId)
         {
-            Mapper.Initialize(cfg=>cfg.CreateMap<Project,ProjectDTO>());
             return workerId != null ? Mapper.Map<IEnumerable<Project>, IEnumerable<ProjectDTO>>(Database.Workers.Get(workerId.Value).Projects) : null;
         }
 

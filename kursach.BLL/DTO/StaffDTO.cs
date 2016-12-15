@@ -8,7 +8,10 @@ namespace kursach.BLL.DTO
 {
     public class StaffDTO
     {
-        public int StaffId { get; private set; }
-        public string Name { get; private set; }
+        public int StaffId { get; set; }
+        public string Name { get; set; }
+        public double Salary { get; set; }
+        public double WorkTime { get; set; }
+        public StaffDTO() { }
     }
 }

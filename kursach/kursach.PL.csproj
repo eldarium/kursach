@@ -42,6 +42,10 @@
       <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -63,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\StaffControl.xaml.cs">
+      <DependentUpon>StaffControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\DepartmentViewModel.cs" />
     <Compile Include="Models\ProjectViewModel.cs" />
     <Compile Include="Models\StaffViewModel.cs" />
@@ -84,6 +91,12 @@
       <DependentUpon>DetailedInfoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switcher.cs" />
+    <Compile Include="Util\MainModule.cs" />
+    <Compile Include="_companybase_mdfDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_companybase_mdfDataSet.xsd</DependentUpon>
+    </Compile>
     <Page Include="Controls\DetailedInfo\AddControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\DetailedInfo\DetailedInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StaffControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -153,6 +170,17 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="_companybase_mdfDataSet.xsc">
+      <DependentUpon>_companybase_mdfDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_companybase_mdfDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_companybase_mdfDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_companybase_mdfDataSet.xss">
+      <DependentUpon>_companybase_mdfDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -168,6 +196,7 @@
       <Name>kursach.BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -8,7 +8,8 @@ namespace kursach.BLL.DTO
 {
     public class DepartmentDTO
     {
-        public int DepartmentId { get; private set; }
-        public string Name { get; private set; }
+        public int DepartmentId { get; set; }
+        public string Name { get; set; }
+        public DepartmentDTO() { }
     }
 }

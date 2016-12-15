@@ -47,7 +47,7 @@ namespace kursach.BLL.Services
             var dwork = from workers in Database.Workers.GetAll()
                 where workers.AssignedDepartment.DepartmentId == departmentId
                 select workers;
-            Mapper.Initialize(cfg => cfg.CreateMap<IEnumerable<Worker>, IEnumerable<WorkerDTO>>());
+            Mapper.Initialize(cfg => cfg.CreateMap<Worker, WorkerDTO>());
             return Mapper.Map<IEnumerable<Worker>, IEnumerable<WorkerDTO>>(dwork);
         }
 

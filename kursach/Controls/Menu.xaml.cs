@@ -29,16 +29,23 @@ namespace kursach.Controls
 
         private void WorkersButton_Click(object sender, RoutedEventArgs e)
         {
+            Switcher.Switch(new ManagementControl(ManagementControl.Desire.Worker));
         }
 
         private void DepartmentsButton_Click(object sender, RoutedEventArgs e)
         {
+            Switcher.Switch(new ManagementControl(ManagementControl.Desire.Department));
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             upWin = Window.GetWindow(this);
             upWin.Cursor = Cursors.Arrow;
+        }
+
+        private void StaffButton_Click(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new StaffControl());
         }
     }
 }

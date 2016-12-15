@@ -8,10 +8,11 @@ namespace kursach.Controls.DetailedInfo
     public partial class DetailedInfoWindow : Window
     {
 
-        public DetailedInfoWindow()
+        public DetailedInfoWindow(AddControl c)
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            Content = c;
         }
         
     }

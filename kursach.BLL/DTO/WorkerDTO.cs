@@ -6,13 +6,15 @@ namespace kursach.BLL.DTO
     public class WorkerDTO
     {
         private DateTime _assignDay;
-        public int WorkerId { get; private set; }
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
-        public long BankAccount { get; private set; }
-        public IEnumerable<ProjectDTO> Projects { get; private set; }
-        public DepartmentDTO AssignedDepartment { get; private set; }
-        public StaffDTO AssignedPosition { get; private set; }
+        public int WorkerId { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public long BankAccount { get; set; }
+        public IEnumerable<ProjectDTO> Projects { get; set; }
+        public DepartmentDTO AssignedDepartment { get; set; }
+        public StaffDTO AssignedPosition { get; set; }
         public double Age => (DateTime.Today - _assignDay).TotalDays; //?
+
+        public WorkerDTO() { }
     }
 }

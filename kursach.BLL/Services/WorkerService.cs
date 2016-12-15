@@ -18,8 +18,9 @@ namespace kursach.BLL.Services
         }
         public void AddWorker(WorkerDTO workerDto)
         {
-            Mapper.Initialize(cfg => cfg.CreateMap<WorkerDTO, Worker>());
-            Worker w = Mapper.Map<WorkerDTO, Worker>(workerDto);
+            //Mapper.Initialize(cfg => cfg.CreateMap<DepartmentDTO, Department>());
+            //Mapper.Initialize(cfg => cfg.CreateMap<WorkerDTO, Worker>());
+            Worker w = new Worker() {BankAccount =  workerDto.BankAccount, AssignedDepartment = new Department() { DepartmentId = workerDto.AssignedDepartment.DepartmentId, Name = workerDto.AssignedDepartment.Name}, AssignedPosition = new Staff() {Name = workerDto.AssignedPosition.Name, StaffId = workerDto.AssignedPosition.StaffId},Name = workerDto.Name, Surname = workerDto.Surname};
             Database.Workers.Create(w);
             Database.Save();
         }
@@ -37,7 +38,7 @@ namespace kursach.BLL.Services
             var toc = Database.Workers.Get(id.Value);
             if (toc == null) return;
             Mapper.Initialize(cfg => cfg.CreateMap<WorkerDTO, Worker>());
-            toc = Mapper.Map<WorkerDTO, Worker>(newWorker);
+            toc = Mapper.Map(newWorker,toc);
             Database.Save();
         }
 
@@ -50,6 +51,7 @@ namespace kursach.BLL.Services
         public IEnumerable<WorkerDTO> GetAllWorkers()
         {
             Mapper.Initialize(cfg=>cfg.CreateMap<Worker, WorkerDTO>());
+            Mapper.Initialize(cfg => cfg.CreateMap<Department, DepartmentDTO>());
             return Mapper.Map<IEnumerable<Worker>, IEnumerable<WorkerDTO>>(Database.Workers.GetAll());
         }
 

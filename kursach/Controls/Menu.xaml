@@ -73,7 +73,7 @@
 				</StackPanel>
 			</Button>
 			<Button Margin="5 0 5 10" Padding="5" Style="{StaticResource RoundCorner}"
-			        local:StyleExt.Color="{StaticResource BlueButtonColor}" Name="StaffButton">
+			        local:StyleExt.Color="{StaticResource BlueButtonColor}" Name="StaffButton" Click="StaffButton_Click">
 				<StackPanel>
 					<TextBlock>Управління посадами</TextBlock>
 				</StackPanel>

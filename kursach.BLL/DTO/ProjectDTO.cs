@@ -2,7 +2,9 @@
 {
     public class ProjectDTO
     {
-        public string Name { get; private set; }
-        public decimal Cost { get; private set; }
+        public int ProjectID { get; set; }
+        public string Name { get; set; }
+        public decimal Cost { get; set; }
+        public ProjectDTO() { }
     }
 }

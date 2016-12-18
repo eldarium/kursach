@@ -9,82 +9,82 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="500" Loaded="UserControl_Loaded">
 
-	<UserControl.Resources>
-		<Style TargetType="TextBlock">
-			<Setter Property="FontFamily" Value="Lucida Sans" />
-			<Setter Property="FontSize" Value="25" />
-			<Setter Property="Padding" Value="5" />
-		</Style>
-	</UserControl.Resources>
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Lucida Sans" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+    </UserControl.Resources>
 
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-		</Grid.ColumnDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
 
-		<controls:SearchButton x:Name="SearchButton" Margin="5 0 5 0" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="17" />
-		<StackPanel Grid.Row="2" Grid.RowSpan="8" Grid.Column="2" Grid.ColumnSpan="17" VerticalAlignment="Center">
-			<Button Margin="5 5 5 10" Padding="5" Style="{StaticResource RoundCorner}"
+        <controls:SearchButton x:Name="SearchButton" Margin="5 0 5 0" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="17" />
+        <StackPanel Grid.Row="2" Grid.RowSpan="8" Grid.Column="2" Grid.ColumnSpan="17" VerticalAlignment="Center">
+            <Button Margin="5 5 5 10" Padding="5" Style="{StaticResource RoundCorner}"
 			        local:StyleExt.Color="{StaticResource BlueButtonColor}" Name="WorkersButton" Click="WorkersButton_Click">
-				<DockPanel LastChildFill="False">
-					<Image DockPanel.Dock="Left" />
-					<TextBlock DockPanel.Dock="Right">Управління робітниками</TextBlock>
-				</DockPanel>
-			</Button>
+                <DockPanel LastChildFill="False">
+                    <Image DockPanel.Dock="Left" />
+                    <TextBlock DockPanel.Dock="Right">Управління робітниками</TextBlock>
+                </DockPanel>
+            </Button>
 
-			<Button Margin="5 0 5 10" Padding="5" Style="{StaticResource RoundCorner}"
+            <Button Margin="5 0 5 10" Padding="5" Style="{StaticResource RoundCorner}"
 			        local:StyleExt.Color="{StaticResource BlueButtonColor}" Name="DepartmentsButton"
 			        Click="DepartmentsButton_Click">
-				<StackPanel>
-					<TextBlock>Управління підрозділами</TextBlock>
-				</StackPanel>
-			</Button>
-			<Button Margin="5 0 5 10" Padding="5" Style="{StaticResource RoundCorner}"
-			        local:StyleExt.Color="{StaticResource BlueButtonColor}" Name="StaffButton" Click="StaffButton_Click">
-				<StackPanel>
-					<TextBlock>Управління посадами</TextBlock>
-				</StackPanel>
-			</Button>
-			<Button Margin="5 0 5 10" Padding="5" Style="{StaticResource RoundCorner}" Name="ExitButton"
+                <StackPanel>
+                    <TextBlock>Управління підрозділами</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Margin="5,0,0,10" Padding="5" Style="{StaticResource RoundCorner}"
+			        local:StyleExt.Color="{StaticResource BlueButtonColor}" Name="StaffButton" Click="StaffButton_Click" HorizontalAlignment="Left" Width="396">
+                <StackPanel>
+                    <TextBlock>Управління посадами</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Margin="5 0 5 10" Padding="5" Style="{StaticResource RoundCorner}" Name="ExitButton"
 			        Click="ExitButton_Click" local:StyleExt.Color="{StaticResource RedButtonColor}">
-				<StackPanel>
-					<TextBlock>Вихід</TextBlock>
-				</StackPanel>
-			</Button>
-		</StackPanel>
-	</Grid>
+                <StackPanel>
+                    <TextBlock>Вихід</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
 
 </UserControl>

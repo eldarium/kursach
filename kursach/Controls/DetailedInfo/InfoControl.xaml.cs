@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using kursach.Models;
 
 namespace kursach.Controls.DetailedInfo
 {
@@ -7,8 +8,16 @@ namespace kursach.Controls.DetailedInfo
     /// </summary>
     public partial class InfoControl : UserControl
     {
-        public InfoControl()
+        DepartmentViewModel department;
+        WorkerViewModel worker;
+        public InfoControl(DepartmentViewModel d)
         {
+            department = d;
+            InitializeComponent();
+        }
+        public InfoControl(WorkerViewModel w)
+        {
+            worker = w;
             InitializeComponent();
         }
     }

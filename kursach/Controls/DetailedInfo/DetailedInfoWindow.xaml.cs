@@ -14,6 +14,12 @@ namespace kursach.Controls.DetailedInfo
             InitializeComponent();
             Content = c;
         }
-        
+        public DetailedInfoWindow(InfoControl c)
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            InitializeComponent();
+            Content = c;
+        }
+
     }
 }

@@ -7,8 +7,10 @@ namespace kursach.DAL.Entities
         public int DepartmentId { get; set; }
         public string Name { get;  set; }
 
+        public ICollection<Worker> AssignedWorkers { get; set; }
         public Department()
         {
+            AssignedWorkers = new List<Worker>();
         }
 
     }

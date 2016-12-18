@@ -29,11 +29,13 @@ namespace kursach.Controls
 
         private void WorkersButton_Click(object sender, RoutedEventArgs e)
         {
+            upWin.Cursor = Cursors.Wait;
             Switcher.Switch(new ManagementControl(ManagementControl.Desire.Worker));
         }
 
         private void DepartmentsButton_Click(object sender, RoutedEventArgs e)
         {
+            upWin.Cursor = Cursors.Wait;
             Switcher.Switch(new ManagementControl(ManagementControl.Desire.Department));
         }
 
@@ -45,6 +47,7 @@ namespace kursach.Controls
 
         private void StaffButton_Click(object sender, RoutedEventArgs e)
         {
+            upWin.Cursor = Cursors.Wait;
             Switcher.Switch(new StaffControl());
         }
     }

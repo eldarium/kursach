@@ -20,7 +20,7 @@
 				<TextBox x:Name="SearchBox" Width="0" />
 				<ComboBox x:Name="SearchScopeBox" Width="0" />
 			</StackPanel>
-			<Button Style="{StaticResource RoundCorner}" ext:StyleExt.Color="{StaticResource BlueButtonColor}">
+			<Button Style="{StaticResource RoundCorner}" ext:StyleExt.Color="{StaticResource BlueButtonColor}" KeyDown="Button_KeyDown">
 				<TextBlock>asd</TextBlock>
 			</Button>
 		</StackPanel>

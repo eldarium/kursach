@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="_companybase_mdfDataSet" targetNamespace="http://tempuri.org/_companybase_mdfDataSet.xsd" xmlns:mstns="http://tempuri.org/_companybase_mdfDataSet.xsd" xmlns="http://tempuri.org/_companybase_mdfDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="_kursach_DAL_Contexts_CompanyContextDataSet" targetNamespace="http://tempuri.org/_kursach_DAL_Contexts_CompanyContextDataSet.xsd" xmlns:mstns="http://tempuri.org/_kursach_DAL_Contexts_CompanyContextDataSet.xsd" xmlns="http://tempuri.org/_kursach_DAL_Contexts_CompanyContextDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection ConnectionStringObject="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=companybase.mdf;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="asus-x401a\localdb#2b4c57e1.companybase.mdf.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=kursach.DAL.Contexts.CompanyContext;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="asus-x401a\localdb#2b4c57e1.kursach.DAL.Contexts.CompanyContext.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="__MigrationHistoryTableAdapter" GeneratorDataComponentClassName="__MigrationHistoryTableAdapter" Name="__MigrationHistory" UserDataComponentName="__MigrationHistoryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.companybase.mdf.dbo" DbObjectName="[companybase.mdf].dbo.__MigrationHistory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.kursach.DAL.Contexts.CompanyContext.dbo" DbObjectName="[kursach.DAL.Contexts.CompanyContext].dbo.__MigrationHistory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[__MigrationHistory] WHERE (([MigrationId] = @Original_MigrationId) AND ([ContextKey] = @Original_ContextKey) AND ([ProductVersion] = @Original_ProductVersion))</CommandText>
@@ -65,7 +65,7 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DepartmentsTableAdapter" GeneratorDataComponentClassName="DepartmentsTableAdapter" Name="Departments" UserDataComponentName="DepartmentsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.companybase.mdf.dbo" DbObjectName="[companybase.mdf].dbo.Departments" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.kursach.DAL.Contexts.CompanyContext.dbo" DbObjectName="[kursach.DAL.Contexts.CompanyContext].dbo.Departments" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Departments] WHERE (([DepartmentId] = @Original_DepartmentId))</CommandText>
@@ -96,7 +96,7 @@ SELECT DepartmentId, Name FROM Departments WHERE (DepartmentId = @DepartmentId)<
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_DepartmentId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DepartmentId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="DepartmentId" ColumnName="DepartmentId" DataSourceName="[companybase.mdf].dbo.Departments" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartmentId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartmentId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartmentId" ColumnName="DepartmentId" DataSourceName="[kursach.DAL.Contexts.CompanyContext].dbo.Departments" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartmentId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartmentId" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -110,7 +110,7 @@ SELECT DepartmentId, Name FROM Departments WHERE (DepartmentId = @DepartmentId)<
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProjectsTableAdapter" GeneratorDataComponentClassName="ProjectsTableAdapter" Name="Projects" UserDataComponentName="ProjectsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.companybase.mdf.dbo" DbObjectName="[companybase.mdf].dbo.Projects" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.kursach.DAL.Contexts.CompanyContext.dbo" DbObjectName="[kursach.DAL.Contexts.CompanyContext].dbo.Projects" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Projects] WHERE (([ProjectID] = @Original_ProjectID) AND ([Cost] = @Original_Cost))</CommandText>
@@ -145,7 +145,7 @@ SELECT ProjectID, Name, Cost FROM Projects WHERE (ProjectID = @ProjectID)</Comma
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Cost" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Cost" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Cost" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Cost" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="ProjectID" ColumnName="ProjectID" DataSourceName="[companybase.mdf].dbo.Projects" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ProjectID" ColumnName="ProjectID" DataSourceName="[kursach.DAL.Contexts.CompanyContext].dbo.Projects" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -160,7 +160,7 @@ SELECT ProjectID, Name, Cost FROM Projects WHERE (ProjectID = @ProjectID)</Comma
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StaffsTableAdapter" GeneratorDataComponentClassName="StaffsTableAdapter" Name="Staffs" UserDataComponentName="StaffsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.companybase.mdf.dbo" DbObjectName="[companybase.mdf].dbo.Staffs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.kursach.DAL.Contexts.CompanyContext.dbo" DbObjectName="[kursach.DAL.Contexts.CompanyContext].dbo.Staffs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Staffs] WHERE (([StaffId] = @Original_StaffId) AND ([Salary] = @Original_Salary) AND ([WorkTime] = @Original_WorkTime))</CommandText>
@@ -199,7 +199,7 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)</C
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StaffId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StaffId" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_Salary" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="Salary" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_WorkTime" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="WorkTime" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="StaffId" ColumnName="StaffId" DataSourceName="[companybase.mdf].dbo.Staffs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StaffId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="StaffId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="StaffId" ColumnName="StaffId" DataSourceName="[kursach.DAL.Contexts.CompanyContext].dbo.Staffs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StaffId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="StaffId" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -213,12 +213,12 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)</C
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WorkersTableAdapter" GeneratorDataComponentClassName="WorkersTableAdapter" Name="Workers" UserDataComponentName="WorkersTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Workers1TableAdapter" GeneratorDataComponentClassName="Workers1TableAdapter" Name="Workers1" UserDataComponentName="Workers1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.companybase.mdf.dbo" DbObjectName="[companybase.mdf].dbo.Workers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="asus-x401a\localdb#2b4c57e1.kursach.DAL.Contexts.CompanyContext.dbo" DbObjectName="[kursach.DAL.Contexts.CompanyContext].dbo.Workers1" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Workers] WHERE (([WorkerId] = @Original_WorkerId) AND ([BankAccount] = @Original_BankAccount) AND ((@IsNull_AssignedDepartment_DepartmentId = 1 AND [AssignedDepartment_DepartmentId] IS NULL) OR ([AssignedDepartment_DepartmentId] = @Original_AssignedDepartment_DepartmentId)) AND ((@IsNull_AssignedPosition_StaffId = 1 AND [AssignedPosition_StaffId] IS NULL) OR ([AssignedPosition_StaffId] = @Original_AssignedPosition_StaffId)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Workers1] WHERE (([WorkerId] = @Original_WorkerId) AND ([BankAccount] = @Original_BankAccount) AND ((@IsNull_AssignedDepartment_DepartmentId = 1 AND [AssignedDepartment_DepartmentId] IS NULL) OR ([AssignedDepartment_DepartmentId] = @Original_AssignedDepartment_DepartmentId)) AND ((@IsNull_AssignedPosition_StaffId = 1 AND [AssignedPosition_StaffId] IS NULL) OR ([AssignedPosition_StaffId] = @Original_AssignedPosition_StaffId)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_WorkerId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WorkerId" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_BankAccount" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="BankAccount" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -231,8 +231,8 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)</C
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Workers] ([Name], [Surname], [BankAccount], [AssignedDepartment_DepartmentId], [AssignedPosition_StaffId]) VALUES (@Name, @Surname, @BankAccount, @AssignedDepartment_DepartmentId, @AssignedPosition_StaffId);
-SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM Workers WHERE (WorkerId = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[Workers1] ([Name], [Surname], [BankAccount], [AssignedDepartment_DepartmentId], [AssignedPosition_StaffId]) VALUES (@Name, @Surname, @BankAccount, @AssignedDepartment_DepartmentId, @AssignedPosition_StaffId);
+SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM Workers1 WHERE (WorkerId = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Surname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Surname" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -244,14 +244,14 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM dbo.Workers</CommandText>
+                    <CommandText>SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM dbo.Workers1</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Workers] SET [Name] = @Name, [Surname] = @Surname, [BankAccount] = @BankAccount, [AssignedDepartment_DepartmentId] = @AssignedDepartment_DepartmentId, [AssignedPosition_StaffId] = @AssignedPosition_StaffId WHERE (([WorkerId] = @Original_WorkerId) AND ([BankAccount] = @Original_BankAccount) AND ((@IsNull_AssignedDepartment_DepartmentId = 1 AND [AssignedDepartment_DepartmentId] IS NULL) OR ([AssignedDepartment_DepartmentId] = @Original_AssignedDepartment_DepartmentId)) AND ((@IsNull_AssignedPosition_StaffId = 1 AND [AssignedPosition_StaffId] IS NULL) OR ([AssignedPosition_StaffId] = @Original_AssignedPosition_StaffId)));
-SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM Workers WHERE (WorkerId = @WorkerId)</CommandText>
+                    <CommandText>UPDATE [dbo].[Workers1] SET [Name] = @Name, [Surname] = @Surname, [BankAccount] = @BankAccount, [AssignedDepartment_DepartmentId] = @AssignedDepartment_DepartmentId, [AssignedPosition_StaffId] = @AssignedPosition_StaffId WHERE (([WorkerId] = @Original_WorkerId) AND ([BankAccount] = @Original_BankAccount) AND ((@IsNull_AssignedDepartment_DepartmentId = 1 AND [AssignedDepartment_DepartmentId] IS NULL) OR ([AssignedDepartment_DepartmentId] = @Original_AssignedDepartment_DepartmentId)) AND ((@IsNull_AssignedPosition_StaffId = 1 AND [AssignedPosition_StaffId] IS NULL) OR ([AssignedPosition_StaffId] = @Original_AssignedPosition_StaffId)));
+SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM Workers1 WHERE (WorkerId = @WorkerId)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Surname" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Surname" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -264,7 +264,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_AssignedDepartment_DepartmentId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AssignedDepartment_DepartmentId" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AssignedPosition_StaffId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AssignedPosition_StaffId" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_AssignedPosition_StaffId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AssignedPosition_StaffId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="WorkerId" ColumnName="WorkerId" DataSourceName="[companybase.mdf].dbo.Workers" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@WorkerId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="WorkerId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="WorkerId" ColumnName="WorkerId" DataSourceName="[kursach.DAL.Contexts.CompanyContext].dbo.Workers1" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@WorkerId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="WorkerId" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -285,7 +285,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="_companybase_mdfDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_companybase_mdfDataSet" msprop:Generator_UserDSName="_companybase_mdfDataSet">
+  <xs:element name="_kursach_DAL_Contexts_CompanyContextDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_kursach_DAL_Contexts_CompanyContextDataSet" msprop:Generator_UserDSName="_kursach_DAL_Contexts_CompanyContextDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="__MigrationHistory" msprop:Generator_TableClassName="__MigrationHistoryDataTable" msprop:Generator_TableVarName="table__MigrationHistory" msprop:Generator_RowChangedName="__MigrationHistoryRowChanged" msprop:Generator_TablePropName="__MigrationHistory" msprop:Generator_RowDeletingName="__MigrationHistoryRowDeleting" msprop:Generator_RowChangingName="__MigrationHistoryRowChanging" msprop:Generator_RowEvHandlerName="__MigrationHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="__MigrationHistoryRowDeleted" msprop:Generator_RowClassName="__MigrationHistoryRow" msprop:Generator_UserTableName="__MigrationHistory" msprop:Generator_RowEvArgName="__MigrationHistoryRowChangeEvent">
@@ -361,7 +361,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Workers" msprop:Generator_TableClassName="WorkersDataTable" msprop:Generator_TableVarName="tableWorkers" msprop:Generator_RowChangedName="WorkersRowChanged" msprop:Generator_TablePropName="Workers" msprop:Generator_RowDeletingName="WorkersRowDeleting" msprop:Generator_RowChangingName="WorkersRowChanging" msprop:Generator_RowEvHandlerName="WorkersRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkersRowDeleted" msprop:Generator_RowClassName="WorkersRow" msprop:Generator_UserTableName="Workers" msprop:Generator_RowEvArgName="WorkersRowChangeEvent">
+        <xs:element name="Workers1" msprop:Generator_TableClassName="Workers1DataTable" msprop:Generator_TableVarName="tableWorkers1" msprop:Generator_RowChangedName="Workers1RowChanged" msprop:Generator_TablePropName="Workers1" msprop:Generator_RowDeletingName="Workers1RowDeleting" msprop:Generator_RowChangingName="Workers1RowChanging" msprop:Generator_RowEvHandlerName="Workers1RowChangeEventHandler" msprop:Generator_RowDeletedName="Workers1RowDeleted" msprop:Generator_RowClassName="Workers1Row" msprop:Generator_UserTableName="Workers1" msprop:Generator_RowEvArgName="Workers1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="WorkerId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnWorkerId" msprop:Generator_ColumnPropNameInRow="WorkerId" msprop:Generator_ColumnPropNameInTable="WorkerIdColumn" msprop:Generator_UserColumnName="WorkerId" type="xs:int" />
@@ -404,15 +404,15 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
       <xs:selector xpath=".//mstns:Staffs" />
       <xs:field xpath="mstns:StaffId" />
     </xs:unique>
-    <xs:unique name="Workers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Workers" />
+    <xs:unique name="Workers1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Workers1" />
       <xs:field xpath="mstns:WorkerId" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_dbo.Workers_dbo.Departments_AssignedDepartment_DepartmentId" msdata:parent="Departments" msdata:child="Workers" msdata:parentkey="DepartmentId" msdata:childkey="AssignedDepartment_DepartmentId" msprop:Generator_UserChildTable="Workers" msprop:Generator_ChildPropName="GetWorkersRows" msprop:Generator_UserRelationName="FK_dbo.Workers_dbo.Departments_AssignedDepartment_DepartmentId" msprop:Generator_RelationVarName="_relationFK_dbo_Workers_dbo_Departments_AssignedDepartment_DepartmentId" msprop:Generator_UserParentTable="Departments" msprop:Generator_ParentPropName="DepartmentsRow" />
-      <msdata:Relationship name="FK_dbo.Workers_dbo.Staffs_AssignedPosition_StaffId" msdata:parent="Staffs" msdata:child="Workers" msdata:parentkey="StaffId" msdata:childkey="AssignedPosition_StaffId" msprop:Generator_UserChildTable="Workers" msprop:Generator_ChildPropName="GetWorkersRows" msprop:Generator_UserRelationName="FK_dbo.Workers_dbo.Staffs_AssignedPosition_StaffId" msprop:Generator_RelationVarName="_relationFK_dbo_Workers_dbo_Staffs_AssignedPosition_StaffId" msprop:Generator_UserParentTable="Staffs" msprop:Generator_ParentPropName="StaffsRow" />
+      <msdata:Relationship name="FK_dbo.Workers_dbo.Departments_AssignedDepartment_DepartmentId" msdata:parent="Departments" msdata:child="Workers1" msdata:parentkey="DepartmentId" msdata:childkey="AssignedDepartment_DepartmentId" msprop:Generator_UserChildTable="Workers1" msprop:Generator_ChildPropName="GetWorkers1Rows" msprop:Generator_UserRelationName="FK_dbo.Workers_dbo.Departments_AssignedDepartment_DepartmentId" msprop:Generator_RelationVarName="_relationFK_dbo_Workers_dbo_Departments_AssignedDepartment_DepartmentId" msprop:Generator_UserParentTable="Departments" msprop:Generator_ParentPropName="DepartmentsRow" />
+      <msdata:Relationship name="FK_dbo.Workers_dbo.Staffs_AssignedPosition_StaffId" msdata:parent="Staffs" msdata:child="Workers1" msdata:parentkey="StaffId" msdata:childkey="AssignedPosition_StaffId" msprop:Generator_UserChildTable="Workers1" msprop:Generator_ChildPropName="GetWorkers1Rows" msprop:Generator_UserRelationName="FK_dbo.Workers_dbo.Staffs_AssignedPosition_StaffId" msprop:Generator_RelationVarName="_relationFK_dbo_Workers_dbo_Staffs_AssignedPosition_StaffId" msprop:Generator_UserParentTable="Staffs" msprop:Generator_ParentPropName="StaffsRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -61,7 +61,7 @@ namespace kursach.BLL.Services
 
         public IEnumerable<ProjectDTO> GetProjects(int? workerId)
         {
-            return workerId != null ? Mapper.Map<IEnumerable<Project>, IEnumerable<ProjectDTO>>(Database.Workers.Get(workerId.Value).Projects) : null;
+            return workerId != null ? Mapper.Map<IEnumerable<Project>, IEnumerable<ProjectDTO>>(Database.Workers.Get(workerId.Value).WorkerProjects) : null;
         }
 
         public void Dispose()

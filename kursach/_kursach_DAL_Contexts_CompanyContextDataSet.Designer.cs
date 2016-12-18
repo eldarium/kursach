@@ -20,9 +20,9 @@ namespace kursach {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("_companybase_mdfDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("_kursach_DAL_Contexts_CompanyContextDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class _companybase_mdfDataSet : global::System.Data.DataSet {
+    public partial class _kursach_DAL_Contexts_CompanyContextDataSet : global::System.Data.DataSet {
         
         private @__MigrationHistoryDataTable table__MigrationHistory;
         
@@ -32,7 +32,7 @@ namespace kursach {
         
         private StaffsDataTable tableStaffs;
         
-        private WorkersDataTable tableWorkers;
+        private Workers1DataTable tableWorkers1;
         
         private global::System.Data.DataRelation _relationFK_dbo_Workers_dbo_Departments_AssignedDepartment_DepartmentId;
         
@@ -42,7 +42,7 @@ namespace kursach {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public _companybase_mdfDataSet() {
+        public _kursach_DAL_Contexts_CompanyContextDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -53,7 +53,7 @@ namespace kursach {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected _companybase_mdfDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected _kursach_DAL_Contexts_CompanyContextDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -78,8 +78,8 @@ namespace kursach {
                 if ((ds.Tables["Staffs"] != null)) {
                     base.Tables.Add(new StaffsDataTable(ds.Tables["Staffs"]));
                 }
-                if ((ds.Tables["Workers"] != null)) {
-                    base.Tables.Add(new WorkersDataTable(ds.Tables["Workers"]));
+                if ((ds.Tables["Workers1"] != null)) {
+                    base.Tables.Add(new Workers1DataTable(ds.Tables["Workers1"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -143,9 +143,9 @@ namespace kursach {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public WorkersDataTable Workers {
+        public Workers1DataTable Workers1 {
             get {
-                return this.tableWorkers;
+                return this.tableWorkers1;
             }
         }
         
@@ -191,7 +191,7 @@ namespace kursach {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            _companybase_mdfDataSet cln = ((_companybase_mdfDataSet)(base.Clone()));
+            _kursach_DAL_Contexts_CompanyContextDataSet cln = ((_kursach_DAL_Contexts_CompanyContextDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -228,8 +228,8 @@ namespace kursach {
                 if ((ds.Tables["Staffs"] != null)) {
                     base.Tables.Add(new StaffsDataTable(ds.Tables["Staffs"]));
                 }
-                if ((ds.Tables["Workers"] != null)) {
-                    base.Tables.Add(new WorkersDataTable(ds.Tables["Workers"]));
+                if ((ds.Tables["Workers1"] != null)) {
+                    base.Tables.Add(new Workers1DataTable(ds.Tables["Workers1"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -288,10 +288,10 @@ namespace kursach {
                     this.tableStaffs.InitVars();
                 }
             }
-            this.tableWorkers = ((WorkersDataTable)(base.Tables["Workers"]));
+            this.tableWorkers1 = ((Workers1DataTable)(base.Tables["Workers1"]));
             if ((initTable == true)) {
-                if ((this.tableWorkers != null)) {
-                    this.tableWorkers.InitVars();
+                if ((this.tableWorkers1 != null)) {
+                    this.tableWorkers1.InitVars();
                 }
             }
             this._relationFK_dbo_Workers_dbo_Departments_AssignedDepartment_DepartmentId = this.Relations["FK_dbo.Workers_dbo.Departments_AssignedDepartment_DepartmentId"];
@@ -301,9 +301,9 @@ namespace kursach {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "_companybase_mdfDataSet";
+            this.DataSetName = "_kursach_DAL_Contexts_CompanyContextDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/_companybase_mdfDataSet.xsd";
+            this.Namespace = "http://tempuri.org/_kursach_DAL_Contexts_CompanyContextDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.table__MigrationHistory = new @__MigrationHistoryDataTable();
@@ -314,15 +314,15 @@ namespace kursach {
             base.Tables.Add(this.tableProjects);
             this.tableStaffs = new StaffsDataTable();
             base.Tables.Add(this.tableStaffs);
-            this.tableWorkers = new WorkersDataTable();
-            base.Tables.Add(this.tableWorkers);
+            this.tableWorkers1 = new Workers1DataTable();
+            base.Tables.Add(this.tableWorkers1);
             this._relationFK_dbo_Workers_dbo_Departments_AssignedDepartment_DepartmentId = new global::System.Data.DataRelation("FK_dbo.Workers_dbo.Departments_AssignedDepartment_DepartmentId", new global::System.Data.DataColumn[] {
                         this.tableDepartments.DepartmentIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableWorkers.AssignedDepartment_DepartmentIdColumn}, false);
+                        this.tableWorkers1.AssignedDepartment_DepartmentIdColumn}, false);
             this.Relations.Add(this._relationFK_dbo_Workers_dbo_Departments_AssignedDepartment_DepartmentId);
             this._relationFK_dbo_Workers_dbo_Staffs_AssignedPosition_StaffId = new global::System.Data.DataRelation("FK_dbo.Workers_dbo.Staffs_AssignedPosition_StaffId", new global::System.Data.DataColumn[] {
                         this.tableStaffs.StaffIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableWorkers.AssignedPosition_StaffIdColumn}, false);
+                        this.tableWorkers1.AssignedPosition_StaffIdColumn}, false);
             this.Relations.Add(this._relationFK_dbo_Workers_dbo_Staffs_AssignedPosition_StaffId);
         }
         
@@ -352,7 +352,7 @@ namespace kursach {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeWorkers() {
+        private bool ShouldSerializeWorkers1() {
             return false;
         }
         
@@ -367,7 +367,7 @@ namespace kursach {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            _companybase_mdfDataSet ds = new _companybase_mdfDataSet();
+            _kursach_DAL_Contexts_CompanyContextDataSet ds = new _kursach_DAL_Contexts_CompanyContextDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -424,7 +424,7 @@ namespace kursach {
         public delegate void StaffsRowChangeEventHandler(object sender, StaffsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void WorkersRowChangeEventHandler(object sender, WorkersRowChangeEvent e);
+        public delegate void Workers1RowChangeEventHandler(object sender, Workers1RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -674,7 +674,7 @@ namespace kursach {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _companybase_mdfDataSet ds = new _companybase_mdfDataSet();
+                _kursach_DAL_Contexts_CompanyContextDataSet ds = new _kursach_DAL_Contexts_CompanyContextDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -951,7 +951,7 @@ namespace kursach {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _companybase_mdfDataSet ds = new _companybase_mdfDataSet();
+                _kursach_DAL_Contexts_CompanyContextDataSet ds = new _kursach_DAL_Contexts_CompanyContextDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1243,7 +1243,7 @@ namespace kursach {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _companybase_mdfDataSet ds = new _companybase_mdfDataSet();
+                _kursach_DAL_Contexts_CompanyContextDataSet ds = new _kursach_DAL_Contexts_CompanyContextDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1550,7 +1550,7 @@ namespace kursach {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _companybase_mdfDataSet ds = new _companybase_mdfDataSet();
+                _kursach_DAL_Contexts_CompanyContextDataSet ds = new _kursach_DAL_Contexts_CompanyContextDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1614,7 +1614,7 @@ namespace kursach {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class WorkersDataTable : global::System.Data.TypedTableBase<WorkersRow> {
+        public partial class Workers1DataTable : global::System.Data.TypedTableBase<Workers1Row> {
             
             private global::System.Data.DataColumn columnWorkerId;
             
@@ -1630,8 +1630,8 @@ namespace kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WorkersDataTable() {
-                this.TableName = "Workers";
+            public Workers1DataTable() {
+                this.TableName = "Workers1";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1639,7 +1639,7 @@ namespace kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal WorkersDataTable(global::System.Data.DataTable table) {
+            internal Workers1DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1656,7 +1656,7 @@ namespace kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected WorkersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Workers1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1720,34 +1720,34 @@ namespace kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WorkersRow this[int index] {
+            public Workers1Row this[int index] {
                 get {
-                    return ((WorkersRow)(this.Rows[index]));
+                    return ((Workers1Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event WorkersRowChangeEventHandler WorkersRowChanging;
+            public event Workers1RowChangeEventHandler Workers1RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event WorkersRowChangeEventHandler WorkersRowChanged;
+            public event Workers1RowChangeEventHandler Workers1RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event WorkersRowChangeEventHandler WorkersRowDeleting;
+            public event Workers1RowChangeEventHandler Workers1RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event WorkersRowChangeEventHandler WorkersRowDeleted;
+            public event Workers1RowChangeEventHandler Workers1RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddWorkersRow(WorkersRow row) {
+            public void AddWorkers1Row(Workers1Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WorkersRow AddWorkersRow(string Name, string Surname, long BankAccount, DepartmentsRow _parentDepartmentsRowByFK_dbo_Workers_dbo_Departments_AssignedDepartment_DepartmentId, StaffsRow _parentStaffsRowByFK_dbo_Workers_dbo_Staffs_AssignedPosition_StaffId) {
-                WorkersRow rowWorkersRow = ((WorkersRow)(this.NewRow()));
+            public Workers1Row AddWorkers1Row(string Name, string Surname, long BankAccount, DepartmentsRow _parentDepartmentsRowByFK_dbo_Workers_dbo_Departments_AssignedDepartment_DepartmentId, StaffsRow _parentStaffsRowByFK_dbo_Workers_dbo_Staffs_AssignedPosition_StaffId) {
+                Workers1Row rowWorkers1Row = ((Workers1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
@@ -1761,22 +1761,22 @@ namespace kursach {
                 if ((_parentStaffsRowByFK_dbo_Workers_dbo_Staffs_AssignedPosition_StaffId != null)) {
                     columnValuesArray[5] = _parentStaffsRowByFK_dbo_Workers_dbo_Staffs_AssignedPosition_StaffId[0];
                 }
-                rowWorkersRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowWorkersRow);
-                return rowWorkersRow;
+                rowWorkers1Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowWorkers1Row);
+                return rowWorkers1Row;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WorkersRow FindByWorkerId(int WorkerId) {
-                return ((WorkersRow)(this.Rows.Find(new object[] {
+            public Workers1Row FindByWorkerId(int WorkerId) {
+                return ((Workers1Row)(this.Rows.Find(new object[] {
                             WorkerId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                WorkersDataTable cln = ((WorkersDataTable)(base.Clone()));
+                Workers1DataTable cln = ((Workers1DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1784,7 +1784,7 @@ namespace kursach {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new WorkersDataTable();
+                return new Workers1DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1828,28 +1828,28 @@ namespace kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WorkersRow NewWorkersRow() {
-                return ((WorkersRow)(this.NewRow()));
+            public Workers1Row NewWorkers1Row() {
+                return ((Workers1Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new WorkersRow(builder);
+                return new Workers1Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(WorkersRow);
+                return typeof(Workers1Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.WorkersRowChanged != null)) {
-                    this.WorkersRowChanged(this, new WorkersRowChangeEvent(((WorkersRow)(e.Row)), e.Action));
+                if ((this.Workers1RowChanged != null)) {
+                    this.Workers1RowChanged(this, new Workers1RowChangeEvent(((Workers1Row)(e.Row)), e.Action));
                 }
             }
             
@@ -1857,8 +1857,8 @@ namespace kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.WorkersRowChanging != null)) {
-                    this.WorkersRowChanging(this, new WorkersRowChangeEvent(((WorkersRow)(e.Row)), e.Action));
+                if ((this.Workers1RowChanging != null)) {
+                    this.Workers1RowChanging(this, new Workers1RowChangeEvent(((Workers1Row)(e.Row)), e.Action));
                 }
             }
             
@@ -1866,8 +1866,8 @@ namespace kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.WorkersRowDeleted != null)) {
-                    this.WorkersRowDeleted(this, new WorkersRowChangeEvent(((WorkersRow)(e.Row)), e.Action));
+                if ((this.Workers1RowDeleted != null)) {
+                    this.Workers1RowDeleted(this, new Workers1RowChangeEvent(((Workers1Row)(e.Row)), e.Action));
                 }
             }
             
@@ -1875,14 +1875,14 @@ namespace kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.WorkersRowDeleting != null)) {
-                    this.WorkersRowDeleting(this, new WorkersRowChangeEvent(((WorkersRow)(e.Row)), e.Action));
+                if ((this.Workers1RowDeleting != null)) {
+                    this.Workers1RowDeleting(this, new Workers1RowChangeEvent(((Workers1Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveWorkersRow(WorkersRow row) {
+            public void RemoveWorkers1Row(Workers1Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -1891,7 +1891,7 @@ namespace kursach {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _companybase_mdfDataSet ds = new _companybase_mdfDataSet();
+                _kursach_DAL_Contexts_CompanyContextDataSet ds = new _kursach_DAL_Contexts_CompanyContextDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1909,7 +1909,7 @@ namespace kursach {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "WorkersDataTable";
+                attribute2.FixedValue = "Workers1DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2064,12 +2064,12 @@ namespace kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WorkersRow[] GetWorkersRows() {
+            public Workers1Row[] GetWorkers1Rows() {
                 if ((this.Table.ChildRelations["FK_dbo.Workers_dbo.Departments_AssignedDepartment_DepartmentId"] == null)) {
-                    return new WorkersRow[0];
+                    return new Workers1Row[0];
                 }
                 else {
-                    return ((WorkersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Workers_dbo.Departments_AssignedDepartment_DepartmentId"])));
+                    return ((Workers1Row[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Workers_dbo.Departments_AssignedDepartment_DepartmentId"])));
                 }
             }
         }
@@ -2216,12 +2216,12 @@ namespace kursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WorkersRow[] GetWorkersRows() {
+            public Workers1Row[] GetWorkers1Rows() {
                 if ((this.Table.ChildRelations["FK_dbo.Workers_dbo.Staffs_AssignedPosition_StaffId"] == null)) {
-                    return new WorkersRow[0];
+                    return new Workers1Row[0];
                 }
                 else {
-                    return ((WorkersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Workers_dbo.Staffs_AssignedPosition_StaffId"])));
+                    return ((Workers1Row[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Workers_dbo.Staffs_AssignedPosition_StaffId"])));
                 }
             }
         }
@@ -2229,25 +2229,25 @@ namespace kursach {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class WorkersRow : global::System.Data.DataRow {
+        public partial class Workers1Row : global::System.Data.DataRow {
             
-            private WorkersDataTable tableWorkers;
+            private Workers1DataTable tableWorkers1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal WorkersRow(global::System.Data.DataRowBuilder rb) : 
+            internal Workers1Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableWorkers = ((WorkersDataTable)(this.Table));
+                this.tableWorkers1 = ((Workers1DataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int WorkerId {
                 get {
-                    return ((int)(this[this.tableWorkers.WorkerIdColumn]));
+                    return ((int)(this[this.tableWorkers1.WorkerIdColumn]));
                 }
                 set {
-                    this[this.tableWorkers.WorkerIdColumn] = value;
+                    this[this.tableWorkers1.WorkerIdColumn] = value;
                 }
             }
             
@@ -2256,14 +2256,14 @@ namespace kursach {
             public string Name {
                 get {
                     try {
-                        return ((string)(this[this.tableWorkers.NameColumn]));
+                        return ((string)(this[this.tableWorkers1.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'Workers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'Workers1\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableWorkers.NameColumn] = value;
+                    this[this.tableWorkers1.NameColumn] = value;
                 }
             }
             
@@ -2272,14 +2272,14 @@ namespace kursach {
             public string Surname {
                 get {
                     try {
-                        return ((string)(this[this.tableWorkers.SurnameColumn]));
+                        return ((string)(this[this.tableWorkers1.SurnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Surname\' in table \'Workers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Surname\' in table \'Workers1\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableWorkers.SurnameColumn] = value;
+                    this[this.tableWorkers1.SurnameColumn] = value;
                 }
             }
             
@@ -2287,10 +2287,10 @@ namespace kursach {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public long BankAccount {
                 get {
-                    return ((long)(this[this.tableWorkers.BankAccountColumn]));
+                    return ((long)(this[this.tableWorkers1.BankAccountColumn]));
                 }
                 set {
-                    this[this.tableWorkers.BankAccountColumn] = value;
+                    this[this.tableWorkers1.BankAccountColumn] = value;
                 }
             }
             
@@ -2299,15 +2299,15 @@ namespace kursach {
             public int AssignedDepartment_DepartmentId {
                 get {
                     try {
-                        return ((int)(this[this.tableWorkers.AssignedDepartment_DepartmentIdColumn]));
+                        return ((int)(this[this.tableWorkers1.AssignedDepartment_DepartmentIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AssignedDepartment_DepartmentId\' in table \'Workers\' is DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AssignedDepartment_DepartmentId\' in table \'Workers1\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableWorkers.AssignedDepartment_DepartmentIdColumn] = value;
+                    this[this.tableWorkers1.AssignedDepartment_DepartmentIdColumn] = value;
                 }
             }
             
@@ -2316,14 +2316,14 @@ namespace kursach {
             public int AssignedPosition_StaffId {
                 get {
                     try {
-                        return ((int)(this[this.tableWorkers.AssignedPosition_StaffIdColumn]));
+                        return ((int)(this[this.tableWorkers1.AssignedPosition_StaffIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AssignedPosition_StaffId\' in table \'Workers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AssignedPosition_StaffId\' in table \'Workers1\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableWorkers.AssignedPosition_StaffIdColumn] = value;
+                    this[this.tableWorkers1.AssignedPosition_StaffIdColumn] = value;
                 }
             }
             
@@ -2352,49 +2352,49 @@ namespace kursach {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNameNull() {
-                return this.IsNull(this.tableWorkers.NameColumn);
+                return this.IsNull(this.tableWorkers1.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNameNull() {
-                this[this.tableWorkers.NameColumn] = global::System.Convert.DBNull;
+                this[this.tableWorkers1.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSurnameNull() {
-                return this.IsNull(this.tableWorkers.SurnameColumn);
+                return this.IsNull(this.tableWorkers1.SurnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSurnameNull() {
-                this[this.tableWorkers.SurnameColumn] = global::System.Convert.DBNull;
+                this[this.tableWorkers1.SurnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAssignedDepartment_DepartmentIdNull() {
-                return this.IsNull(this.tableWorkers.AssignedDepartment_DepartmentIdColumn);
+                return this.IsNull(this.tableWorkers1.AssignedDepartment_DepartmentIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAssignedDepartment_DepartmentIdNull() {
-                this[this.tableWorkers.AssignedDepartment_DepartmentIdColumn] = global::System.Convert.DBNull;
+                this[this.tableWorkers1.AssignedDepartment_DepartmentIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAssignedPosition_StaffIdNull() {
-                return this.IsNull(this.tableWorkers.AssignedPosition_StaffIdColumn);
+                return this.IsNull(this.tableWorkers1.AssignedPosition_StaffIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAssignedPosition_StaffIdNull() {
-                this[this.tableWorkers.AssignedPosition_StaffIdColumn] = global::System.Convert.DBNull;
+                this[this.tableWorkers1.AssignedPosition_StaffIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2538,22 +2538,22 @@ namespace kursach {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class WorkersRowChangeEvent : global::System.EventArgs {
+        public class Workers1RowChangeEvent : global::System.EventArgs {
             
-            private WorkersRow eventRow;
+            private Workers1Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WorkersRowChangeEvent(WorkersRow row, global::System.Data.DataRowAction action) {
+            public Workers1RowChangeEvent(Workers1Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WorkersRow Row {
+            public Workers1Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -2569,7 +2569,7 @@ namespace kursach {
         }
     }
 }
-namespace kursach._companybase_mdfDataSetTableAdapters {
+namespace kursach._kursach_DAL_Contexts_CompanyContextDataSetTableAdapters {
     
     
     /// <summary>
@@ -2734,8 +2734,8 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=companybase.mdf;Integrated Sec" +
-                "urity=True";
+            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=kursach.DAL.Contexts.CompanyCo" +
+                "ntext;Integrated Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2753,7 +2753,7 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_companybase_mdfDataSet.@__MigrationHistoryDataTable dataTable) {
+        public virtual int Fill(_kursach_DAL_Contexts_CompanyContextDataSet.@__MigrationHistoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2766,9 +2766,9 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _companybase_mdfDataSet.@__MigrationHistoryDataTable GetData() {
+        public virtual _kursach_DAL_Contexts_CompanyContextDataSet.@__MigrationHistoryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _companybase_mdfDataSet.@__MigrationHistoryDataTable dataTable = new _companybase_mdfDataSet.@__MigrationHistoryDataTable();
+            _kursach_DAL_Contexts_CompanyContextDataSet.@__MigrationHistoryDataTable dataTable = new _kursach_DAL_Contexts_CompanyContextDataSet.@__MigrationHistoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2776,14 +2776,14 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet.@__MigrationHistoryDataTable dataTable) {
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet.@__MigrationHistoryDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet dataSet) {
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet dataSet) {
             return this.Adapter.Update(dataSet, "__MigrationHistory");
         }
         
@@ -3109,8 +3109,8 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=companybase.mdf;Integrated Sec" +
-                "urity=True";
+            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=kursach.DAL.Contexts.CompanyCo" +
+                "ntext;Integrated Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3127,7 +3127,7 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_companybase_mdfDataSet.DepartmentsDataTable dataTable) {
+        public virtual int Fill(_kursach_DAL_Contexts_CompanyContextDataSet.DepartmentsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3140,9 +3140,9 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _companybase_mdfDataSet.DepartmentsDataTable GetData() {
+        public virtual _kursach_DAL_Contexts_CompanyContextDataSet.DepartmentsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _companybase_mdfDataSet.DepartmentsDataTable dataTable = new _companybase_mdfDataSet.DepartmentsDataTable();
+            _kursach_DAL_Contexts_CompanyContextDataSet.DepartmentsDataTable dataTable = new _kursach_DAL_Contexts_CompanyContextDataSet.DepartmentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3150,14 +3150,14 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet.DepartmentsDataTable dataTable) {
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet.DepartmentsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet dataSet) {
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Departments");
         }
         
@@ -3419,8 +3419,8 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=companybase.mdf;Integrated Sec" +
-                "urity=True";
+            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=kursach.DAL.Contexts.CompanyCo" +
+                "ntext;Integrated Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3437,7 +3437,7 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_companybase_mdfDataSet.ProjectsDataTable dataTable) {
+        public virtual int Fill(_kursach_DAL_Contexts_CompanyContextDataSet.ProjectsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3450,9 +3450,9 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _companybase_mdfDataSet.ProjectsDataTable GetData() {
+        public virtual _kursach_DAL_Contexts_CompanyContextDataSet.ProjectsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _companybase_mdfDataSet.ProjectsDataTable dataTable = new _companybase_mdfDataSet.ProjectsDataTable();
+            _kursach_DAL_Contexts_CompanyContextDataSet.ProjectsDataTable dataTable = new _kursach_DAL_Contexts_CompanyContextDataSet.ProjectsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3460,14 +3460,14 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet.ProjectsDataTable dataTable) {
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet.ProjectsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet dataSet) {
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Projects");
         }
         
@@ -3738,8 +3738,8 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=companybase.mdf;Integrated Sec" +
-                "urity=True";
+            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=kursach.DAL.Contexts.CompanyCo" +
+                "ntext;Integrated Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3756,7 +3756,7 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_companybase_mdfDataSet.StaffsDataTable dataTable) {
+        public virtual int Fill(_kursach_DAL_Contexts_CompanyContextDataSet.StaffsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3769,9 +3769,9 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _companybase_mdfDataSet.StaffsDataTable GetData() {
+        public virtual _kursach_DAL_Contexts_CompanyContextDataSet.StaffsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _companybase_mdfDataSet.StaffsDataTable dataTable = new _companybase_mdfDataSet.StaffsDataTable();
+            _kursach_DAL_Contexts_CompanyContextDataSet.StaffsDataTable dataTable = new _kursach_DAL_Contexts_CompanyContextDataSet.StaffsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3779,14 +3779,14 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet.StaffsDataTable dataTable) {
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet.StaffsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet dataSet) {
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Staffs");
         }
         
@@ -3909,7 +3909,7 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class WorkersTableAdapter : global::System.ComponentModel.Component {
+    public partial class Workers1TableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3923,7 +3923,7 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public WorkersTableAdapter() {
+        public Workers1TableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4020,7 +4020,7 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Workers";
+            tableMapping.DataSetTable = "Workers1";
             tableMapping.ColumnMappings.Add("WorkerId", "WorkerId");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Surname", "Surname");
@@ -4030,7 +4030,7 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Workers] WHERE (([WorkerId] = @Original_WorkerId) AND ([BankAccount] = @Original_BankAccount) AND ((@IsNull_AssignedDepartment_DepartmentId = 1 AND [AssignedDepartment_DepartmentId] IS NULL) OR ([AssignedDepartment_DepartmentId] = @Original_AssignedDepartment_DepartmentId)) AND ((@IsNull_AssignedPosition_StaffId = 1 AND [AssignedPosition_StaffId] IS NULL) OR ([AssignedPosition_StaffId] = @Original_AssignedPosition_StaffId)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Workers1] WHERE (([WorkerId] = @Original_WorkerId) AND ([BankAccount] = @Original_BankAccount) AND ((@IsNull_AssignedDepartment_DepartmentId = 1 AND [AssignedDepartment_DepartmentId] IS NULL) OR ([AssignedDepartment_DepartmentId] = @Original_AssignedDepartment_DepartmentId)) AND ((@IsNull_AssignedPosition_StaffId = 1 AND [AssignedPosition_StaffId] IS NULL) OR ([AssignedPosition_StaffId] = @Original_AssignedPosition_StaffId)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WorkerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WorkerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BankAccount", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BankAccount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4040,8 +4040,8 @@ SELECT StaffId, Name, Salary, WorkTime FROM Staffs WHERE (StaffId = @StaffId)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssignedPosition_StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignedPosition_StaffId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Workers] ([Name], [Surname], [BankAccount], [AssignedDepartment_DepartmentId], [AssignedPosition_StaffId]) VALUES (@Name, @Surname, @BankAccount, @AssignedDepartment_DepartmentId, @AssignedPosition_StaffId);
-SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM Workers WHERE (WorkerId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Workers1] ([Name], [Surname], [BankAccount], [AssignedDepartment_DepartmentId], [AssignedPosition_StaffId]) VALUES (@Name, @Surname, @BankAccount, @AssignedDepartment_DepartmentId, @AssignedPosition_StaffId);
+SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM Workers1 WHERE (WorkerId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4050,8 +4050,8 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignedPosition_StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignedPosition_StaffId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Workers] SET [Name] = @Name, [Surname] = @Surname, [BankAccount] = @BankAccount, [AssignedDepartment_DepartmentId] = @AssignedDepartment_DepartmentId, [AssignedPosition_StaffId] = @AssignedPosition_StaffId WHERE (([WorkerId] = @Original_WorkerId) AND ([BankAccount] = @Original_BankAccount) AND ((@IsNull_AssignedDepartment_DepartmentId = 1 AND [AssignedDepartment_DepartmentId] IS NULL) OR ([AssignedDepartment_DepartmentId] = @Original_AssignedDepartment_DepartmentId)) AND ((@IsNull_AssignedPosition_StaffId = 1 AND [AssignedPosition_StaffId] IS NULL) OR ([AssignedPosition_StaffId] = @Original_AssignedPosition_StaffId)));
-SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM Workers WHERE (WorkerId = @WorkerId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Workers1] SET [Name] = @Name, [Surname] = @Surname, [BankAccount] = @BankAccount, [AssignedDepartment_DepartmentId] = @AssignedDepartment_DepartmentId, [AssignedPosition_StaffId] = @AssignedPosition_StaffId WHERE (([WorkerId] = @Original_WorkerId) AND ([BankAccount] = @Original_BankAccount) AND ((@IsNull_AssignedDepartment_DepartmentId = 1 AND [AssignedDepartment_DepartmentId] IS NULL) OR ([AssignedDepartment_DepartmentId] = @Original_AssignedDepartment_DepartmentId)) AND ((@IsNull_AssignedPosition_StaffId = 1 AND [AssignedPosition_StaffId] IS NULL) OR ([AssignedPosition_StaffId] = @Original_AssignedPosition_StaffId)));
+SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, AssignedPosition_StaffId FROM Workers1 WHERE (WorkerId = @WorkerId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4071,8 +4071,8 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=companybase.mdf;Integrated Sec" +
-                "urity=True";
+            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=kursach.DAL.Contexts.CompanyCo" +
+                "ntext;Integrated Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4082,7 +4082,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, Ass" +
-                "ignedPosition_StaffId FROM dbo.Workers";
+                "ignedPosition_StaffId FROM dbo.Workers1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4090,7 +4090,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_companybase_mdfDataSet.WorkersDataTable dataTable) {
+        public virtual int Fill(_kursach_DAL_Contexts_CompanyContextDataSet.Workers1DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4103,9 +4103,9 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _companybase_mdfDataSet.WorkersDataTable GetData() {
+        public virtual _kursach_DAL_Contexts_CompanyContextDataSet.Workers1DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _companybase_mdfDataSet.WorkersDataTable dataTable = new _companybase_mdfDataSet.WorkersDataTable();
+            _kursach_DAL_Contexts_CompanyContextDataSet.Workers1DataTable dataTable = new _kursach_DAL_Contexts_CompanyContextDataSet.Workers1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4113,15 +4113,15 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet.WorkersDataTable dataTable) {
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet.Workers1DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_companybase_mdfDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Workers");
+        public virtual int Update(_kursach_DAL_Contexts_CompanyContextDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Workers1");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4318,7 +4318,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         
         private StaffsTableAdapter _staffsTableAdapter;
         
-        private WorkersTableAdapter _workersTableAdapter;
+        private Workers1TableAdapter _workers1TableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -4396,12 +4396,12 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public WorkersTableAdapter WorkersTableAdapter {
+        public Workers1TableAdapter Workers1TableAdapter {
             get {
-                return this._workersTableAdapter;
+                return this._workers1TableAdapter;
             }
             set {
-                this._workersTableAdapter = value;
+                this._workers1TableAdapter = value;
             }
         }
         
@@ -4440,9 +4440,9 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
                             && (this._staffsTableAdapter.Connection != null))) {
                     return this._staffsTableAdapter.Connection;
                 }
-                if (((this._workersTableAdapter != null) 
-                            && (this._workersTableAdapter.Connection != null))) {
-                    return this._workersTableAdapter.Connection;
+                if (((this._workers1TableAdapter != null) 
+                            && (this._workers1TableAdapter.Connection != null))) {
+                    return this._workers1TableAdapter.Connection;
                 }
                 return null;
             }
@@ -4469,7 +4469,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
                 if ((this._staffsTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._workersTableAdapter != null)) {
+                if ((this._workers1TableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -4481,7 +4481,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(_companybase_mdfDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(_kursach_DAL_Contexts_CompanyContextDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._departmentsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Departments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -4519,12 +4519,12 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._workersTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Workers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._workers1TableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Workers1.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._workersTableAdapter.Update(updatedRows));
+                    result = (result + this._workers1TableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4536,7 +4536,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(_companybase_mdfDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(_kursach_DAL_Contexts_CompanyContextDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._departmentsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Departments.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -4570,11 +4570,11 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._workersTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Workers.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._workers1TableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Workers1.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._workersTableAdapter.Update(addedRows));
+                    result = (result + this._workers1TableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4586,13 +4586,13 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(_companybase_mdfDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(_kursach_DAL_Contexts_CompanyContextDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._workersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Workers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._workers1TableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Workers1.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._workersTableAdapter.Update(deletedRows));
+                    result = (result + this._workers1TableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4660,7 +4660,7 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(_companybase_mdfDataSet dataSet) {
+        public virtual int UpdateAll(_kursach_DAL_Contexts_CompanyContextDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -4687,8 +4687,8 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._workersTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._workersTableAdapter.Connection) == false))) {
+            if (((this._workers1TableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._workers1TableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -4760,13 +4760,13 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
                         adaptersWithAcceptChangesDuringUpdate.Add(this._staffsTableAdapter.Adapter);
                     }
                 }
-                if ((this._workersTableAdapter != null)) {
-                    revertConnections.Add(this._workersTableAdapter, this._workersTableAdapter.Connection);
-                    this._workersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._workersTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._workersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._workersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._workersTableAdapter.Adapter);
+                if ((this._workers1TableAdapter != null)) {
+                    revertConnections.Add(this._workers1TableAdapter, this._workers1TableAdapter.Connection);
+                    this._workers1TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._workers1TableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._workers1TableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._workers1TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._workers1TableAdapter.Adapter);
                     }
                 }
                 // 
@@ -4843,9 +4843,9 @@ SELECT WorkerId, Name, Surname, BankAccount, AssignedDepartment_DepartmentId, As
                     this._staffsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._staffsTableAdapter]));
                     this._staffsTableAdapter.Transaction = null;
                 }
-                if ((this._workersTableAdapter != null)) {
-                    this._workersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._workersTableAdapter]));
-                    this._workersTableAdapter.Transaction = null;
+                if ((this._workers1TableAdapter != null)) {
+                    this._workers1TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._workers1TableAdapter]));
+                    this._workers1TableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

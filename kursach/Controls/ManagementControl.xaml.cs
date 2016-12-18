@@ -5,11 +5,12 @@ using System.Windows.Input;
 using kursach.BLL.DTO;
 using kursach.BLL.Infrastructure;
 using kursach.BLL.Interfaces;
-using kursach.BLL.Services;
 using kursach.Controls.DetailedInfo;
 using kursach.Models;
 using kursach.Util;
 using Ninject;
+using AutoMapper;
+using System.Collections.Generic;
 
 namespace kursach.Controls
 {
@@ -21,7 +22,6 @@ namespace kursach.Controls
         public enum Desire { Department, Worker, Staff}
         private IDepartmentService deps;
         private IWorkerService works;
-        private IStaffService staffs;
         private Desire desiredBehaviour;
         public ManagementControl(Desire d)
         {
@@ -29,7 +29,6 @@ namespace kursach.Controls
             IKernel k = new StandardKernel(new ServiceModule("CompanyConnection"), new MainModule());
             deps = k.Get<IDepartmentService>();
             works = k.Get<IWorkerService>();
-            staffs = k.Get<IStaffService>();
             InitializeComponent();
         }
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -39,6 +38,8 @@ namespace kursach.Controls
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
         {
+            deps.Dispose();
+            works.Dispose();
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -51,10 +52,19 @@ namespace kursach.Controls
                         InfoGrid.ItemsSource = deps.GetAllDepartments();
                         break;
                     case Desire.Worker:
-                        RemoveButton.Visibility = Visibility.Visible;
-                        RemoveButton.IsEnabled = true;
-                        works.AddWorker(new WorkerDTO {Name = "k", Surname = "j", AssignedDepartment = new DepartmentDTO() { Name = "1"}, AssignedPosition = new StaffDTO() {Name = "sd", Salary = 252, StaffId = 23, WorkTime = 152}, BankAccount = 5354534, Projects = null});
-                        InfoGrid.ItemsSource = works.GetAllWorkers();
+                        var w = works.GetAllWorkers();
+                        Mapper.Initialize(cfg =>
+                        {
+                            cfg.CreateMap<WorkerDTO, WorkerViewModel>();
+                            cfg.CreateMap<DepartmentDTO, DepartmentViewModel>();
+                            cfg.CreateMap<StaffDTO, StaffViewModel>();
+                            cfg.CreateMap<ProjectDTO, ProjectViewModel>();
+                            cfg.CreateMap<WorkerDTO, WorkerViewModel>().ReverseMap();
+                            cfg.CreateMap<DepartmentDTO, DepartmentViewModel>().ReverseMap();
+                            cfg.CreateMap<StaffDTO, StaffViewModel>().ReverseMap();
+                            cfg.CreateMap<ProjectDTO, ProjectViewModel>().ReverseMap();
+                        });
+                        InfoGrid.ItemsSource = Mapper.Map<IEnumerable<WorkerDTO>,IEnumerable<WorkerViewModel>>(w);
                         break;
                 }
                 Window.GetWindow(this).Cursor = Cursors.Arrow;
@@ -77,20 +87,22 @@ namespace kursach.Controls
                     break;
             }
         }
-
-        private void InfoGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
-
+         
         private void InfoGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(Convert.ToString(((WorkerViewModel) InfoGrid.SelectedItem).WorkerId));
+            switch (desiredBehaviour)
+            {
+                case Desire.Worker:
+                    new DetailedInfoWindow(new InfoControl(((WorkerViewModel)InfoGrid.SelectedItem))).ShowDialog();
+                    break;
+            }
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             if(InfoGrid.SelectedItem != null)
                 works.RemoveWorker(((WorkerViewModel) InfoGrid.SelectedItem).WorkerId);
+            
         }
 
         private void SmallExitButton_Click(object sender, RoutedEventArgs e)

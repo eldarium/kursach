@@ -9,9 +9,9 @@ namespace kursach.Models
         public string Name { get; private set; }
         public string Surname { get; private set; }
         public long BankAccount { get; private set; }
-        public IEnumerable<ProjectViewModel> Projects { get; private set; }
+        public ICollection<ProjectViewModel> WorkerProjects { get; private set; }
         public DepartmentViewModel AssignedDepartment { get; private set; }
         public StaffViewModel AssignedPosition { get; private set; }
-        public double Age; //?
+        public double Age => 1; //?
     }
 }

@@ -67,6 +67,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\DetailedSearchControl.xaml.cs">
+      <DependentUpon>DetailedSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchRsultControl.xaml.cs">
+      <DependentUpon>SearchRsultControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StaffControl.xaml.cs">
       <DependentUpon>StaffControl.xaml</DependentUpon>
     </Compile>
@@ -97,11 +103,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_companybase_mdfDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_kursach_DAL_Contexts_CompanyContextDataSet.cs">
+      <DependentUpon>_kursach_DAL_Contexts_CompanyContextDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_kursach_DAL_Contexts_CompanyContextDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_kursach_DAL_Contexts_CompanyContextDataSet.xsd</DependentUpon>
+    </Compile>
     <Page Include="Controls\DetailedInfo\AddControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\DetailedInfo\InfoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DetailedSearchControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\DetailedInfo\DetailedInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SearchRsultControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,6 +202,17 @@
     </None>
     <None Include="_companybase_mdfDataSet.xss">
       <DependentUpon>_companybase_mdfDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_kursach_DAL_Contexts_CompanyContextDataSet.xsc">
+      <DependentUpon>_kursach_DAL_Contexts_CompanyContextDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_kursach_DAL_Contexts_CompanyContextDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_kursach_DAL_Contexts_CompanyContextDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_kursach_DAL_Contexts_CompanyContextDataSet.xss">
+      <DependentUpon>_kursach_DAL_Contexts_CompanyContextDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

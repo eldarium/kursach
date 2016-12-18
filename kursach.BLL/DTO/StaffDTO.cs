@@ -12,6 +12,7 @@ namespace kursach.BLL.DTO
         public string Name { get; set; }
         public double Salary { get; set; }
         public double WorkTime { get; set; }
+        public ICollection<WorkerDTO> AssignedWorkers { get; set; }
         public StaffDTO() { }
     }
 }

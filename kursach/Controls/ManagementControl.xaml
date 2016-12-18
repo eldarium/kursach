@@ -58,7 +58,7 @@
 			<TextBlock VerticalAlignment="Center" FontSize="15">Back</TextBlock>
 		</Button>
 		<DataGrid x:Name="InfoGrid" Grid.Row="3" Grid.RowSpan="8" Grid.Column="1" Grid.ColumnSpan="19" IsReadOnly="True"
-		          SelectionMode="Single" SelectionChanged="InfoGrid_SelectionChanged"
+		          SelectionMode="Single"
 		          MouseDoubleClick="InfoGrid_MouseDoubleClick" />
 		<Button x:Name="AddButton" Grid.Row="3" Grid.Column="20" Margin="10 10 -10 -10" Click="AddButton_Click"
 		        Style="{StaticResource RoundCorner}" ext:StyleExt.Color="{StaticResource GreenButtonColor}">

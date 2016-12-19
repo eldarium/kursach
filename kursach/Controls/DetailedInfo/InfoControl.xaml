@@ -43,11 +43,11 @@
         <StackPanel Margin="10" Name="BottomPanel">
             <DockPanel Margin="10 50 10 10" LastChildFill="False">
                 <Button Style="{StaticResource RoundCorner}" ext:StyleExt.Color="{StaticResource BlueButtonColor}"
-				        DockPanel.Dock="Left" MinWidth="100" KeyDown="Button_KeyDown" >
+				        DockPanel.Dock="Left" MinWidth="100" KeyDown="Button_KeyDown" Click="Button_Click" >
                     <TextBlock>Ok</TextBlock>
                 </Button>
                 <Button Style="{StaticResource RoundCorner}" ext:StyleExt.Color="{StaticResource RedButtonColor}"
-				        DockPanel.Dock="Right" MinWidth="100" MinHeight="50" KeyDown="Button_KeyDown">
+				        DockPanel.Dock="Right" MinWidth="100" MinHeight="50" KeyDown="Button_KeyDown" Click="Button_Click">
                     <TextBlock>Cancel</TextBlock>
                 </Button>
             </DockPanel>

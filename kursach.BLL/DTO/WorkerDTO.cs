@@ -11,6 +11,7 @@ namespace kursach.BLL.DTO
         public string Name { get; set; }
         public string Surname { get; set; }
         public long BankAccount { get; set; }
+        public DateTime StartDate { get; set; }
         public ICollection<ProjectDTO> Projects { get; set; }
         public DepartmentDTO AssignedDepartment { get; set; }
         public StaffDTO AssignedPosition { get; set; }

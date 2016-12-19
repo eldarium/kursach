@@ -35,7 +35,7 @@ namespace kursach.DAL.Repositories
 
         public void Create(Worker item)
         {
-            db.Workers.Add(item);
+            db.Entry(item).State = EntityState.Added;
         }
 
         public void Update(Worker item)

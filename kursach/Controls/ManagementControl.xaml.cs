@@ -56,6 +56,7 @@ namespace kursach.Controls
                         break;
                     case Desire.Worker:
                         InfoGrid.ItemsSource = Mapper.Map<IEnumerable<WorkerDTO>, IEnumerable<WorkerViewModel>>(works.GetAllWorkers());
+                        RemoveButton.IsEnabled = true;
                         break;
                     case Desire.Staff:
                         InfoGrid.ItemsSource = Mapper.Map<IEnumerable<StaffDTO>, IEnumerable<StaffViewModel>>(stafs.GetAllStaff());
@@ -91,6 +92,8 @@ namespace kursach.Controls
         {
             if (InfoGrid.SelectedItem != null)
                 works.RemoveWorker(((WorkerViewModel)InfoGrid.SelectedItem).Id);
+            InfoGrid.ItemsSource = Mapper.Map<IEnumerable<WorkerDTO>, IEnumerable<WorkerViewModel>>(works.GetAllWorkers());
+
 
         }
 

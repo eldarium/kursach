@@ -30,5 +30,11 @@ namespace kursach.Controls.DetailedInfo
             DepartmentBox.Text = worker.AssignedDepartment.ToString();
             StaffBox.Text = worker.AssignedPosition.ToString();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this)?.Close();
+
+        }
     }
 }

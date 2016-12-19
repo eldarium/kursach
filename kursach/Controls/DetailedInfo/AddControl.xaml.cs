@@ -20,12 +20,13 @@ namespace kursach.Controls.DetailedInfo
         private IDepartmentService deps;
         private IWorkerService works;
         private ManagementControl.Desire desire;
+        IStaffService stafs;
         public AddControl(ManagementControl.Desire desire)
         {
             IKernel k = new StandardKernel(new ServiceModule("CompanyConnection"), new MainModule());
             deps = k.Get<IDepartmentService>();
             works = k.Get<IWorkerService>();
-            IStaffService stafs = k.Get<IStaffService>();
+             stafs = k.Get<IStaffService>();
             this.desire = desire;
             InitializeComponent();
             foreach (var department in deps.GetAllDepartments())
@@ -36,7 +37,7 @@ namespace kursach.Controls.DetailedInfo
             {
                 StaffBox.Items.Add(AutoMapper.Mapper.Map<StaffDTO, StaffViewModel>(staf));
             }
-            if (desire != ManagementControl.Desire.Department) return;
+            if (desire != ManagementControl.Desire.Department) {  return; }
             SurnamePanel.Visibility = Visibility.Hidden;
             BankPanel.Visibility = Visibility.Hidden;
             DepartmentPanel.Visibility = Visibility.Hidden;
@@ -61,10 +62,11 @@ namespace kursach.Controls.DetailedInfo
                         var s = Mapper.Map<StaffViewModel, StaffDTO>((StaffViewModel) StaffBox.SelectedItem);
                         works.AddWorker(new WorkerDTO
                         {
-                            AssignedDepartment = d,
+                            AssignedDepartment = deps.GetDepartment(d.Id),
                             AssignedDepartmentId = d.Id,
-                            AssignedPosition = s,
+                            AssignedPosition = stafs.GetAllStaff().First(x=>x.Id==s.Id),
                             AssignedPositionId = s.Id,
+                            StartDate = DateTime.Today,
                             BankAccount = Convert.ToInt64(BankBox.Text),
                             Name = NameBox.Text,
                             Surname = SurnameBox.Text

@@ -13,7 +13,7 @@ namespace kursach.BLL.Infrastructure
         }
         public override void Load()
         {
-            Bind<IUnitofwork>().To<EFUnitofwork>().WithConstructorArgument(connectionString);
+            Bind<IUnitofwork>().To<EfUnitofwork>().WithConstructorArgument(connectionString);
         }
     }
 }

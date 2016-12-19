@@ -4,7 +4,7 @@ namespace kursach.DAL.Entities
 {
     public class Department : CompanyEntity
     {
-        public int DepartmentId { get; set; }
+        public int Id { get; set; }
         public string Name { get;  set; }
 
         public ICollection<Worker> AssignedWorkers { get; set; }

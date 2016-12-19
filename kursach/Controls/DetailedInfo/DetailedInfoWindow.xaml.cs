@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace kursach.Controls.DetailedInfo
 {
@@ -8,13 +9,7 @@ namespace kursach.Controls.DetailedInfo
     public partial class DetailedInfoWindow : Window
     {
 
-        public DetailedInfoWindow(AddControl c)
-        {
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            InitializeComponent();
-            Content = c;
-        }
-        public DetailedInfoWindow(InfoControl c)
+        public DetailedInfoWindow(UserControl c)
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();

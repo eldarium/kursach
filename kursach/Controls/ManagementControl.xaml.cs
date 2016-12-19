@@ -11,6 +11,7 @@ using kursach.Util;
 using Ninject;
 using AutoMapper;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace kursach.Controls
 {
@@ -19,9 +20,10 @@ namespace kursach.Controls
     /// </summary>
     public partial class ManagementControl : UserControl
     {
-        public enum Desire { Department, Worker, Staff}
+        public enum Desire { Department, Worker, Staff }
         private IDepartmentService deps;
         private IWorkerService works;
+        private IStaffService stafs;
         private Desire desiredBehaviour;
         public ManagementControl(Desire d)
         {
@@ -29,6 +31,7 @@ namespace kursach.Controls
             IKernel k = new StandardKernel(new ServiceModule("CompanyConnection"), new MainModule());
             deps = k.Get<IDepartmentService>();
             works = k.Get<IWorkerService>();
+            stafs = k.Get<IStaffService>();
             InitializeComponent();
         }
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -49,45 +52,28 @@ namespace kursach.Controls
                 switch (desiredBehaviour)
                 {
                     case Desire.Department:
-                        InfoGrid.ItemsSource = deps.GetAllDepartments();
+                        InfoGrid.ItemsSource = Mapper.Map<IEnumerable<DepartmentDTO>, IEnumerable<DepartmentViewModel>>(deps.GetAllDepartments());
                         break;
                     case Desire.Worker:
-                        var w = works.GetAllWorkers();
-                        Mapper.Initialize(cfg =>
-                        {
-                            cfg.CreateMap<WorkerDTO, WorkerViewModel>();
-                            cfg.CreateMap<DepartmentDTO, DepartmentViewModel>();
-                            cfg.CreateMap<StaffDTO, StaffViewModel>();
-                            cfg.CreateMap<ProjectDTO, ProjectViewModel>();
-                            cfg.CreateMap<WorkerDTO, WorkerViewModel>().ReverseMap();
-                            cfg.CreateMap<DepartmentDTO, DepartmentViewModel>().ReverseMap();
-                            cfg.CreateMap<StaffDTO, StaffViewModel>().ReverseMap();
-                            cfg.CreateMap<ProjectDTO, ProjectViewModel>().ReverseMap();
-                        });
-                        InfoGrid.ItemsSource = Mapper.Map<IEnumerable<WorkerDTO>,IEnumerable<WorkerViewModel>>(w);
+                        InfoGrid.ItemsSource = Mapper.Map<IEnumerable<WorkerDTO>, IEnumerable<WorkerViewModel>>(works.GetAllWorkers());
+                        break;
+                    case Desire.Staff:
+                        InfoGrid.ItemsSource = Mapper.Map<IEnumerable<StaffDTO>, IEnumerable<StaffViewModel>>(stafs.GetAllStaff());
                         break;
                 }
-                Window.GetWindow(this).Cursor = Cursors.Arrow;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+                Window.GetWindow(this).Cursor = Cursors.Arrow;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            switch (desiredBehaviour)
-            {
-                    case Desire.Worker:
-                    new DetailedInfoWindow(new AddControl(works)).ShowDialog();
-                    break;
-                case Desire.Department:
-                    new DetailedInfoWindow(new AddControl(deps)).ShowDialog();
-                    break;
-            }
+            new DetailedInfoWindow(new AddControl(desiredBehaviour)).ShowDialog();
         }
-         
+
         private void InfoGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             switch (desiredBehaviour)
@@ -95,19 +81,33 @@ namespace kursach.Controls
                 case Desire.Worker:
                     new DetailedInfoWindow(new InfoControl(((WorkerViewModel)InfoGrid.SelectedItem))).ShowDialog();
                     break;
+                case Desire.Department:
+                    new DetailedInfoWindow(new InfoMultiControl(((DepartmentViewModel)InfoGrid.SelectedItem))).ShowDialog();
+                    break;
             }
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            if(InfoGrid.SelectedItem != null)
-                works.RemoveWorker(((WorkerViewModel) InfoGrid.SelectedItem).WorkerId);
-            
+            if (InfoGrid.SelectedItem != null)
+                works.RemoveWorker(((WorkerViewModel)InfoGrid.SelectedItem).Id);
+
         }
 
         private void SmallExitButton_Click(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this)?.Close();
+        }
+
+        private void InfoGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+
+            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
+            e.Column.Header = propertyDescriptor.DisplayName;
+            if (propertyDescriptor.DisplayName == "AssignedDepartmentId" || propertyDescriptor.DisplayName == "AssignedPositionId")
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -15,28 +15,32 @@
 	</UserControl.Resources>
 
 	<StackPanel Orientation="Vertical">
-		<StackPanel Margin="10" Name="TopPanel">
-			<DockPanel Name="NamePanel" Margin="10 50 10 10">
-				<TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Name</TextBlock>
-				<TextBox Name="NameBox" MinWidth="240" MaxLines="1" HorizontalAlignment="Right" DockPanel.Dock="Right"
+        <StackPanel Margin="10" Name="TopPanel">
+            <DockPanel Name="NamePanel" Margin="10 50 10 10">
+                <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Name</TextBlock>
+                <TextBox Name="NameBox" MinWidth="240" MaxLines="1" HorizontalAlignment="Right" DockPanel.Dock="Right"
 				         MaxLength="32" />
-			</DockPanel>
-			<DockPanel Name="SurnamePanel" Margin="10">
-				<TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Surname</TextBlock>
-				<TextBox Name="SurnameBox" MinWidth="240" MaxLines="1" HorizontalAlignment="Right" DockPanel.Dock="Right"
+            </DockPanel>
+            <DockPanel Name="SurnamePanel" Margin="10">
+                <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Surname</TextBlock>
+                <TextBox Name="SurnameBox" MinWidth="240" MaxLines="1" HorizontalAlignment="Right" DockPanel.Dock="Right"
 				         MaxLength="32" />
-			</DockPanel>
-			<DockPanel Name="BankPanel" Margin="10">
-				<TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Bank account</TextBlock>
-				<TextBox Name="BankBox" MinWidth="240" MaxLines="1" HorizontalAlignment="Right" DockPanel.Dock="Right"
+            </DockPanel>
+            <DockPanel Name="BankPanel" Margin="10">
+                <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Bank account</TextBlock>
+                <TextBox Name="BankBox" MinWidth="240" MaxLines="1" HorizontalAlignment="Right" DockPanel.Dock="Right"
 				         MaxLength="8" />
-			</DockPanel>
-			<DockPanel Name="DepartmentPanel" Margin="10">
-				<TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Department</TextBlock>
-				<ComboBox Name="DepartmentBox" MinWidth="240" HorizontalAlignment="Right" DockPanel.Dock="Right" />
-			</DockPanel>
-		</StackPanel>
-		<StackPanel Margin="10" Name="BottomPanel">
+            </DockPanel>
+            <DockPanel Name="DepartmentPanel" Margin="10">
+                <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Department</TextBlock>
+                <ComboBox Name="DepartmentBox" MinWidth="240" HorizontalAlignment="Right" DockPanel.Dock="Right" />
+            </DockPanel>
+            <DockPanel Name="StaffPanel" Margin="10">
+                <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left">Staff</TextBlock>
+                <ComboBox Name="StaffBox" MinWidth="240" HorizontalAlignment="Right" DockPanel.Dock="Right" />
+            </DockPanel>
+        </StackPanel>
+        <StackPanel Margin="10" Name="BottomPanel">
 			<DockPanel Margin="10 50 10 10" LastChildFill="False">
 				<Button Style="{StaticResource RoundCorner}" ext:StyleExt.Color="{StaticResource BlueButtonColor}"
 				        DockPanel.Dock="Left" MinWidth="100" Click="Button_Click_2">

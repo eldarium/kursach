@@ -8,7 +8,7 @@ namespace kursach.BLL.DTO
 {
     public class DepartmentDTO
     {
-        public int DepartmentId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public ICollection<WorkerDTO> AssignedWorkers { get; set; }
         public DepartmentDTO() { }

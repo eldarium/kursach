@@ -43,8 +43,8 @@ namespace kursach.DAL.Repositories
 
         public void Delete(int id)
         {
-            var proj = db.Projects.Find(id);
-            if (proj != null) db.Projects.Remove(proj);
+            var dep = db.Projects.Find(id);
+            db.Entry(dep).State = EntityState.Deleted;
         }
     }
 }

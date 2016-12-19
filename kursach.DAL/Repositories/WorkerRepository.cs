@@ -45,10 +45,8 @@ namespace kursach.DAL.Repositories
 
         public void Delete(int id)
         {
-            var worker = db.Workers.Find(id);
-            if (worker == null) return;
-            db.Workers.Remove(worker);
-            db.SaveChanges();
+            var dep = db.Workers.Find(id);
+            db.Entry(dep).State = EntityState.Deleted;
         }
     }
 }

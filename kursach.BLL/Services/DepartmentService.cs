@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using kursach.BLL.DTO;
 using kursach.BLL.Interfaces;
 using kursach.DAL.Entities;
 using kursach.DAL.Interfaces;
 using System.Linq;
+using System.Reflection;
+using kursach.BLL.Infrastructure;
 
 namespace kursach.BLL.Services
 {
@@ -18,7 +21,6 @@ namespace kursach.BLL.Services
         }
         public void AddDepartment(DepartmentDTO departmentDto)
         {
-            Mapper.Initialize(cfg=>cfg.CreateMap<DepartmentDTO, Department>());
             var d = Mapper.Map<DepartmentDTO, Department>(departmentDto);
             Database.Departments.Create(d);
             Database.Save();
@@ -26,34 +28,37 @@ namespace kursach.BLL.Services
 
         public void ChangeDepartment(int? id, DepartmentDTO newDepartment)
         {
-            if (id == null) return;
+            if (id == null) throw new CompanyException("Не задано ID підрозділу");
             var toc = Database.Departments.Get(id.Value);
-            if (toc == null) return;
-            Mapper.Initialize(cfg => cfg.CreateMap<DepartmentDTO, Department>());
-            toc = Mapper.Map<DepartmentDTO, Department>(newDepartment);
+            if (toc == null) throw new CompanyException("Робітника з id " + Convert.ToString(id.Value) + " не знайдено");
+            Database.Departments.Update(Mapper.Map<Department>(newDepartment));
             Database.Save();
         }
 
         public DepartmentDTO GetDepartment(int? departmentId)
         {
-            Mapper.Initialize(cfg => cfg.CreateMap<Department, DepartmentDTO>());
-            return departmentId != null ? 
-                Mapper.Map<Department, DepartmentDTO>(Database.Departments.Get(departmentId.Value)) 
-                : null;
+            if (departmentId == null) throw new CompanyException("Не задано ID підрозділу");
+            var dept = Database.Departments.Get(departmentId.Value);
+            if (dept == null) throw new CompanyException("Підрозділу з id " + Convert.ToString(departmentId.Value) + " не знайдено");
+            return Mapper.Map<Department, DepartmentDTO>(dept);
+        }
+
+        public IEnumerable<DepartmentDTO> Find(Func<DepartmentDTO, bool> predicate)
+        {
+            return Mapper.Map<IEnumerable<Department>, IEnumerable<DepartmentDTO>>(Database.Departments.GetAll()).Where(predicate);
         }
 
         public IEnumerable<WorkerDTO> GetWorkers(int? departmentId)
         {
+            if (departmentId == null) throw new CompanyException("Не задано ID підрозділу");
             var dwork = from workers in Database.Workers.GetAll()
-                where workers.AssignedDepartment.DepartmentId == departmentId
+                where workers.AssignedDepartment.Id == departmentId
                 select workers;
-            Mapper.Initialize(cfg => cfg.CreateMap<Worker, WorkerDTO>());
             return Mapper.Map<IEnumerable<Worker>, IEnumerable<WorkerDTO>>(dwork);
         }
 
         public IEnumerable<DepartmentDTO> GetAllDepartments()
         {
-            Mapper.Initialize(cfg => cfg.CreateMap<Department, DepartmentDTO>());
             return Mapper.Map<IEnumerable<Department>, IEnumerable<DepartmentDTO>>(Database.Departments.GetAll());
         }
 

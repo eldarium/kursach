@@ -11,7 +11,7 @@ namespace kursach.DAL.Contexts
     public class CompanyContext : DbContext
     {
         public CompanyContext() { }
-        public CompanyContext(string connectionString): base(connectionString) {var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance; }
+        public CompanyContext(string connectionString) : base(connectionString) { var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Worker> Workers { get; set; }
@@ -19,7 +19,6 @@ namespace kursach.DAL.Contexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CompanyContext, Migrations.Configuration>());
             base.OnModelCreating(modelBuilder);
         }
     }

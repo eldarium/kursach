@@ -67,10 +67,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\DetailedInfo\InfoMultiControl.xaml.cs">
+      <DependentUpon>InfoMultiControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DetailedInfo\InfoStaffControl.xaml.cs">
+      <DependentUpon>InfoStaffControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DetailedSearchControl.xaml.cs">
       <DependentUpon>DetailedSearchControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SearchRsultControl.xaml.cs">
+    <Compile Include="Controls\Search\SearchButton.xaml.cs">
+      <DependentUpon>SearchButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search\SearchResult.cs" />
+    <Compile Include="Controls\Search\SearchRsultControl.xaml.cs">
       <DependentUpon>SearchRsultControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\StaffControl.xaml.cs">
@@ -90,32 +100,24 @@
     <Compile Include="Controls\ManagementControl.xaml.cs">
       <DependentUpon>ManagementControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SearchButton.xaml.cs">
-      <DependentUpon>SearchButton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\DetailedInfo\DetailedInfoWindow.xaml.cs">
       <DependentUpon>DetailedInfoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switcher.cs" />
     <Compile Include="Util\MainModule.cs" />
-    <Compile Include="_companybase_mdfDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_companybase_mdfDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="_kursach_DAL_Contexts_CompanyContextDataSet.cs">
-      <DependentUpon>_kursach_DAL_Contexts_CompanyContextDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="_kursach_DAL_Contexts_CompanyContextDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_kursach_DAL_Contexts_CompanyContextDataSet.xsd</DependentUpon>
-    </Compile>
     <Page Include="Controls\DetailedInfo\AddControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\DetailedInfo\InfoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DetailedInfo\InfoMultiControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DetailedInfo\InfoStaffControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,17 +129,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SearchButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Controls\DetailedInfo\DetailedInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SearchRsultControl.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Controls\Search\SearchButton.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Search\SearchRsultControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\StaffControl.xaml">
       <SubType>Designer</SubType>
@@ -192,28 +194,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="_companybase_mdfDataSet.xsc">
-      <DependentUpon>_companybase_mdfDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_companybase_mdfDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_companybase_mdfDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_companybase_mdfDataSet.xss">
-      <DependentUpon>_companybase_mdfDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_kursach_DAL_Contexts_CompanyContextDataSet.xsc">
-      <DependentUpon>_kursach_DAL_Contexts_CompanyContextDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_kursach_DAL_Contexts_CompanyContextDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_kursach_DAL_Contexts_CompanyContextDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_kursach_DAL_Contexts_CompanyContextDataSet.xss">
-      <DependentUpon>_kursach_DAL_Contexts_CompanyContextDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -227,6 +207,10 @@
     <ProjectReference Include="..\kursach.BLL\kursach.BLL.csproj">
       <Project>{eef7b3ee-2c41-486e-b31c-93ff0fe6ad61}</Project>
       <Name>kursach.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kursach.DAL\kursach.DAL.csproj">
+      <Project>{ab3c08df-8b22-480b-b438-848b793135ae}</Project>
+      <Name>kursach.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

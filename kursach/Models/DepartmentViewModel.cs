@@ -1,11 +1,17 @@
 ﻿using System.Collections.Generic;
+using kursach.BLL.DTO;
 
 namespace kursach.Models
 {
     public class DepartmentViewModel
     {
-        public int DepartmentId { get; private set; }
-        public string Name { get; private set; }
-        public ISet<WorkerViewModel> AssignedWorkers { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public ICollection<WorkerViewModel> AssignedWorkers { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

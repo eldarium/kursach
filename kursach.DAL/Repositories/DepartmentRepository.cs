@@ -45,8 +45,8 @@ namespace kursach.DAL.Repositories
 
         public void Delete(int id)
         {
-            var dept = db.Departments.Find(id);
-            if (dept != null) db.Departments.Remove(dept);
+            var dep = db.Departments.Find(id);
+            db.Entry(dep).State = EntityState.Deleted;
         }
     }
 }

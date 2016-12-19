@@ -61,6 +61,7 @@
     <Compile Include="DTO\ProjectDTO.cs" />
     <Compile Include="DTO\StaffDTO.cs" />
     <Compile Include="DTO\WorkerDTO.cs" />
+    <Compile Include="Infrastructure\CompanyException.cs" />
     <Compile Include="Infrastructure\ServiceModule.cs" />
     <Compile Include="Interfaces\IDepartmentService.cs" />
     <Compile Include="Interfaces\IProjectService.cs" />

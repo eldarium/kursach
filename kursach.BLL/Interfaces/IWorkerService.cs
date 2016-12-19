@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using kursach.BLL.DTO;
 
 namespace kursach.BLL.Interfaces
@@ -8,6 +9,7 @@ namespace kursach.BLL.Interfaces
         void AddWorker(WorkerDTO workerDto);
         void RemoveWorker(int? id);
         void ChangeWorker(int? id, WorkerDTO newWorker);
+        IEnumerable<WorkerDTO> Find(Func<WorkerDTO, bool> predicate);
         WorkerDTO GetWorker(int? id);
         IEnumerable<WorkerDTO> GetAllWorkers();
         IEnumerable<ProjectDTO> GetProjects(int? workerId); 

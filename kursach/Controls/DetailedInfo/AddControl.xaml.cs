@@ -63,9 +63,7 @@ namespace kursach.Controls.DetailedInfo
                         works.AddWorker(new WorkerDTO
                         {
                             AssignedDepartment = deps.GetDepartment(d.Id),
-                            AssignedDepartmentId = d.Id,
                             AssignedPosition = stafs.GetAllStaff().First(x=>x.Id==s.Id),
-                            AssignedPositionId = s.Id,
                             StartDate = DateTime.Today,
                             BankAccount = Convert.ToInt64(BankBox.Text),
                             Name = NameBox.Text,

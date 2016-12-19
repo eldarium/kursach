@@ -22,68 +22,12 @@ namespace kursach.BLL.Services
         {
             Worker w = Mapper.Map<WorkerDTO, Worker>(workerDto);
             Database.Workers.Create(w);
-            WorkerAssignments(w);
             Database.Save();
         }
-
-        private void WorkerAssignments(Worker work)
-        {
-            int departmentId = work.AssignedDepartment.Id,
-                staffId = work.AssignedPosition.Id;
-            var dept = Database.Departments.Get(departmentId);
-            var staf = Database.Staffs.Get(staffId);
-
-            if (dept == null) throw new CompanyException("Підрозділу з id " + Convert.ToString(departmentId) + " не знайдено");
-            if (staf == null) throw new CompanyException("Посади з id " + Convert.ToString(staffId) + " не знайдено");
-
-            dept.AssignedWorkers.Add(work);
-            Database.Departments.Update(dept);
-            staf.AssignedWorkers.Add(work);
-            Database.Staffs.Update(staf);
-
-            //proj
-            var pr = from p in Database.Projects.GetAll()
-                     where p.AssignedWorkers.Contains(work)
-                     select p;
-            foreach (var project in pr)
-            {
-                project.AssignedWorkers.Add(work);
-                Database.Projects.Update(project);
-            }
-
-        }
-        private void WorkerRemovement(Worker work)
-        {
-            int departmentId = work.AssignedDepartment.Id,
-                staffId = work.AssignedPosition.Id;
-            var dept = Database.Departments.Get(departmentId);
-            var staf = Database.Staffs.Get(staffId);
-
-            if (dept == null) throw new CompanyException("Підрозділу з id " + Convert.ToString(departmentId) + " не знайдено");
-            if (staf == null) throw new CompanyException("Посади з id " + Convert.ToString(staffId) + " не знайдено");
-
-            dept.AssignedWorkers.Remove(work);
-            Database.Departments.Update(dept);
-            staf.AssignedWorkers.Remove(work);
-            Database.Staffs.Update(staf);
-
-            //proj
-            var pr = from p in Database.Projects.GetAll()
-                     where p.AssignedWorkers.Contains(work)
-                     select p;
-            foreach (var project in pr)
-            {
-                project.AssignedWorkers.Remove(work);
-                Database.Projects.Update(project);
-            }
-
-        }
-
         public void RemoveWorker(int? id)
         {
             if (id == null) throw new CompanyException("Не задано ID робітника");
             Database.Workers.Delete(id.Value);
-            WorkerRemovement(Database.Workers.Get(id.Value));
             Database.Save();
         }
 

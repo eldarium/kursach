@@ -12,6 +12,7 @@ using Ninject;
 using AutoMapper;
 using System.Collections.Generic;
 using System.ComponentModel;
+using kursach.DAL.Entities;
 
 namespace kursach.Controls
 {

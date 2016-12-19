@@ -6,8 +6,6 @@ namespace kursach.BLL.DTO
     public class WorkerDTO
     {
         public int Id { get; set; }
-        public int AssignedDepartmentId { get; set; }
-        public int AssignedPositionId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public long BankAccount { get; set; }

@@ -65,6 +65,14 @@
     <Compile Include="Migrations\201612191305465_withdate.Designer.cs">
       <DependentUpon>201612191305465_withdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612192128408_fixed-lower.cs" />
+    <Compile Include="Migrations\201612192128408_fixed-lower.Designer.cs">
+      <DependentUpon>201612192128408_fixed-lower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612192248191_shit.cs" />
+    <Compile Include="Migrations\201612192248191_shit.Designer.cs">
+      <DependentUpon>201612192248191_shit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DepartmentRepository.cs" />
@@ -83,6 +91,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612191305465_withdate.resx">
       <DependentUpon>201612191305465_withdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612192128408_fixed-lower.resx">
+      <DependentUpon>201612192128408_fixed-lower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612192248191_shit.resx">
+      <DependentUpon>201612192248191_shit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

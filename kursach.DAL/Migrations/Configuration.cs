@@ -1,3 +1,5 @@
+using kursach.DAL.Entities;
+
 namespace kursach.DAL.Migrations
 {
     using System;
@@ -26,6 +28,7 @@ namespace kursach.DAL.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
         }
     }
 }
